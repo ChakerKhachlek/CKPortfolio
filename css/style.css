@@ -46,13 +46,11 @@ canvas{
 }
 
 footer {
-    position: fixed;
     bottom: 0;
     width: 100%;
-    background-color: #212529; /* Dark background color for the footer */
+    background-color: #000; /* Dark background color for the footer */
     color: #ffffff; /* Text color */
     padding: 15px;
-    border-top: 1px solid #343a40; /* Dark border color */
 }
 
 .social-icons svg {
