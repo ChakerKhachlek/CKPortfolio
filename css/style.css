@@ -9,6 +9,7 @@ html,body{
 body{
   font-family: 'Fira Code', monospace !important;
   background-color: #121212; /* Dark background color */
+  cursor: crosshair;
 }
 
 
