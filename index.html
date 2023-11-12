@@ -20,8 +20,6 @@
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <!-- Include Ripples.js -->
     <script src="https://cdn.rawgit.com/sirxemic/jquery.ripples/master/dist/jquery.ripples-min.js"></script>
-    <!-- Include Ripples.css (optional, for styling) -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/sirxemic/jquery.ripples/master/dist/jquery.ripples-min.css">
     </head>
 <body>
 
@@ -55,6 +53,13 @@
                     <li class="nav-item">
                         <a class="nav-link text-light" href="#contact">Contact</a>
                     </li>
+                    <div class="toggle-container ">
+                        <label class="switch">
+                            <input type="checkbox" id="rippleToggle" checked>
+                            <span class="slider"></span>
+                        </label>
+                        <span class="toggle-label">Water Ripple</span>
+                    </div>
                 </ul>
             </div>
         </div>
@@ -63,50 +68,6 @@
 
 
     <!-- Navbar End -->
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Dropdown
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                    </li>
-                </ul>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-            </div>
-        </div>
-    </nav>
-
-
 
     <!-- Main Section Start -->
     <div id="particles-js" style="position: relative">
@@ -136,7 +97,7 @@
     <div class="section-separator"></div>
 
     <!-- About Section Start -->
-    <div class="section min-vh-100 d-flex align-items-center water-ripple" id="about" >
+    <div class="section min-vh-100 d-flex align-items-center" id="about" >
         <div class="polygons"></div>
         <div class="container">
             <div class="row d-flex align-items-center justify-content-center text-nowrap text-center text-light mb-5">
@@ -186,7 +147,7 @@
     <div class="section-separator"></div>
 
     <!-- Skills Section Start -->
-    <div class="section min-vh-100 d-flex align-items-center water-ripple" id="skills">
+    <div class="section min-vh-100 d-flex align-items-center" id="skills">
         <div class="polygons"></div>
         <div class="container">
             <div class="row d-flex align-items-center justify-content-center text-nowrap text-center text-light mb-5">
@@ -214,7 +175,7 @@
     <div class="section-separator"></div>
 
     <!-- Projects Section Start -->
-    <div class="section min-vh-100 d-flex align-items-center water-ripple" id="projects">
+    <div class="section min-vh-100 d-flex align-items-center" id="projects">
         <div class="polygons"></div>
         <div class="container">
             <div class="row d-flex align-items-center justify-content-center text-nowrap text-center text-light mb-5">
@@ -242,7 +203,7 @@
     <div class="section-separator"></div>
 
     <!-- Services Section Start -->
-    <div class="section min-vh-100 d-flex align-items-center water-ripple" id="services">
+    <div class="section min-vh-100 d-flex align-items-center" id="services">
         <div class="polygons"></div>
         <div class="container">
             <div class="row d-flex align-items-center justify-content-center text-nowrap text-center text-light mb-5">
@@ -276,7 +237,7 @@
 
 
     <!-- Contact Section Start -->
-    <div class="section min-vh-100 d-flex align-items-center water-ripple" id="contact">
+    <div class="section min-vh-100 d-flex align-items-center" id="contact">
         <div class="polygons"></div>
         <div class="container">
             <div class="row d-flex align-items-center justify-content-center text-nowrap text-center text-light mb-5">
@@ -305,7 +266,7 @@
     <div class="section-separator"></div>
 
     <!-- Footer -->
-    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 px-2 water-ripple">
+    <footer class="footer d-flex flex-wrap justify-content-between align-items-center py-3 px-2 ">
         <div class="col-md-4 col-12 d-flex align-items-center mb-3 mb-md-0">
             <div class="px-2">
                 <img class="rounded" width="30px" src="assets/img/logo.jpeg" alt="My picture">
@@ -365,13 +326,60 @@
             new Date().getFullYear();
     </script>
     <script>
-        $(document).ready(function() {
-          $('.water-ripple').ripples({
-            resolution: 512,      // Higher resolution creates more waves
-            dropRadius: 20,       // Size of the drop
-            perturbance: 0.04,    // Intensity of the ripples
-          });
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get the toggle switch element
+            var toggleSwitch = document.getElementById('rippleToggle');
+        
+            // Function to initialize ripples
+            function initializeRipples() {
+                $('.section').ripples({
+                    resolution: 512,
+                    dropRadius: 20,
+                    perturbance: 0.04,
+                });
+                $('.footer').ripples({
+                    resolution: 512,
+                    dropRadius: 20,
+                    perturbance: 0.04,
+                });
+            }
+        
+            // Function to destroy ripples
+            function destroyRipples() {
+                $('.section').ripples('destroy');
+                $('.footer').ripples('destroy');
+            }
+        
+            // Add an event listener to handle changes
+            toggleSwitch.addEventListener('change', function() {
+                // Get the current state of the toggle switch
+                var rippleEnabled = toggleSwitch.checked;
+        
+                // Implement logic to enable/disable water ripple as needed
+                if (rippleEnabled) {
+                    // Enable water ripple (add your logic here)
+                    console.log('Water ripple enabled');
+        
+                    // Destroy existing ripples instance
+                    destroyRipples();
+        
+                    // Initialize ripples after updating the water-ripple class
+                    initializeRipples();
+                } else {
+                    // Disable water ripple (add your logic here)
+                    console.log('Water ripple disabled');
+        
+                    // Destroy existing ripples instance
+                    destroyRipples();
+                }
+            });
+        
+            // Initial ripples initialization
+            initializeRipples();
         });
+        
+        
+        
       </script>
 
 </body>
