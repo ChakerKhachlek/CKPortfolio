@@ -168,20 +168,23 @@
             <div x-show="skills.length > 0" class="row d-flex align-items-center justify-content-center text-nowrap text-center text-light mb-5">
                 <template x-for="skill in skills" :key="skill.title">
                     <div class="col-md-4 mt-4">
-                    <div class="d-flex justify-content-center align-items-center">
-                        <div>
-                            <img :src="skill.img_logo" alt="Logo" class="w-8 h-8 me-4">
-                        </div>
-                        <div>
-                            <p class="h3 fw-bold" x-text="skill.title"></p>
-                            <div class="progress mt-2" style="height: 2px;">
-                                <div :style="'width:' + skill.percentage + '%'" class="progress-bar bg-primary" role="progressbar"></div>
+                        <div class="d-flex justify-content-center align-items-center p-4 rounded" style="background-color: #f8f9fa; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                            <div style="padding: 10px; background-color: white; border-radius: 50%;">
+                                <img :src="skill.img_logo" alt="Logo" class="w-6" width="50px">
+                            </div>
+                            <div class="ms-4">
+                                <p class="h4 fw-bold text-dark" x-text="skill.title"></p>
+                                <div class="progress mt-2" x-bind:style="'height: 8px; background: linear-gradient(90deg, #ffffff, #ffffff ' + skill.percentage + '%, transparent ' + skill.percentage + '%);'">
+                                    <div class="progress-bar bg-primary" role="progressbar" x-bind:style="'width:' + skill.percentage + '%; transition: width 0.5s ease;'"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                    
+                    
                 </template>
             </div>
+            
         
         </div>
         
