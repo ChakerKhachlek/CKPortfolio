@@ -44,7 +44,7 @@
                         <a class="nav-link text-light" href="#about">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="#skills">Skills</a>
+                        <a class="nav-link text-light" href="#technologies">Technologies</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-light" href="#projects">Projects</a>
@@ -143,8 +143,8 @@
 
     <div class="section-separator"></div>
 
-    <!-- Skills Section Start -->
-    <div class="section min-vh-100 d-flex align-items-center pt-5" id="skills">
+    <!-- Technologies Section Start -->
+    <div class="section min-vh-100 d-flex align-items-center pt-5" id="technologies">
         <div class="polygons"></div>
         <div class="container">
             <div class="row d-flex align-items-center justify-content-center text-nowrap text-center text-light mb-5">
@@ -157,24 +157,24 @@
             <div class="row d-flex align-items-center justify-content-center text-nowrap text-center text-light mb-5">
                 <div class="col"></div>
                 <div class="col">
-                    <h2 class="animated-heading">Skills</h2>
+                    <h2 class="animated-heading">Technologies</h2>
                 </div>
                 <div class="col"></div>
             </div>
 
-            <div  class="mb-5 " x-data="{ skills: [] }"
-            x-init="() => { fetch('https://chakerkhachlek.github.io/CKPortfolio/assets/json/skills.json').then(response => response.json()).then(data => skills = data) }">
-            <div x-show="skills.length > 0" class="row d-flex align-items-center justify-content-center text-nowrap text-center text-light mb-5">
-                <template x-for="skill in skills" :key="skill.title">
+            <div  class="mb-5 " x-data="{ technologies: [] }"
+            x-init="() => { fetch('https://chakerkhachlek.github.io/CKPortfolio/assets/json/technologies.json').then(response => response.json()).then(data => technologies = data) }">
+            <div x-show="technologies.length > 0" class="row d-flex align-items-center justify-content-center text-nowrap text-center text-light mb-5">
+                <template x-for="technology in technologies" :key="technology.title">
                     <div class="col-md-3 mb-4 icon" style="z-index:1000">
                         <div class="d-flex justify-content-center align-items-center p-1 rounded" style="background-color: #f8f9fa87; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
                             <div style="padding: 10px; background-color: white; border-radius: 50%;">
-                                <img :src="skill.img_logo" alt="Logo" class="w-6 img-responsive img-fluid" height="50px" width="50px">
+                                <img :src="technology.img_logo" alt="Logo" class="w-6 img-responsive img-fluid" height="50px" width="50px">
                             </div>
                             <div class="ms-4">
-                                <div class="text fw-bold text-light" x-text="skill.title"></div>
+                                <div class="text fw-bold text-light" x-text="technology.title"></div>
                                 <div class="percentage-container mt-2" style="background-color: black; width: 100px">
-                                    <span class="text-white fw-bold" x-text="skill.percentage + '%'"></span>
+                                    <span class="text-white fw-bold" x-text="technology.percentage + '%'"></span>
                                 </div>
                             </div>
                         </div>
@@ -190,7 +190,7 @@
         
         </div>
     </div>
-    <!-- Skills Section End -->
+    <!-- Technologies Section End -->
 
     <div class="section-separator"></div>
 
