@@ -144,13 +144,13 @@
     <div class="section-separator"></div>
 
     <!-- Skills Section Start -->
-    <div class="section min-vh-100 d-flex align-items-center" id="skills">
+    <div class="section min-vh-100 d-flex align-items-center pt-5" id="skills">
         <div class="polygons"></div>
         <div class="container">
             <div class="row d-flex align-items-center justify-content-center text-nowrap text-center text-light mb-5">
                 <div class="col"></div>
                     <div class="col">
-                        <img class="icon img-fluid" src="assets/img/skills.png" width="150px"/>
+                        <img class="icon img-fluid mt-5" src="assets/img/skills.png" width="150px"/>
                     </div>
                 <div class="col"></div>
             </div>
@@ -162,24 +162,24 @@
                 <div class="col"></div>
             </div>
 
-            <div   x-data="{ skills: [] }"
+            <div  class="mb-5" x-data="{ skills: [] }"
             x-init="() => { fetch('https://chakerkhachlek.github.io/CKPortfolio/assets/json/skills.json').then(response => response.json()).then(data => skills = data) }">
-        
             <div x-show="skills.length > 0" class="row d-flex align-items-center justify-content-center text-nowrap text-center text-light mb-5">
                 <template x-for="skill in skills" :key="skill.title">
-                    <div class="col-md-4 mt-4">
-                        <div class="d-flex justify-content-center align-items-center p-4 rounded" style="background-color: #f8f9fa; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                    <div class="col-md-4 mb-4">
+                        <div class="d-flex justify-content-center align-items-center p-2 rounded" style="background-color: #f8f9fa87; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
                             <div style="padding: 10px; background-color: white; border-radius: 50%;">
-                                <img :src="skill.img_logo" alt="Logo" class="w-6" width="50px">
+                                <img :src="skill.img_logo" alt="Logo" class="w-6" height="50px">
                             </div>
                             <div class="ms-4">
-                                <p class="h4 fw-bold text-dark" x-text="skill.title"></p>
-                                <div class="progress mt-2" x-bind:style="'height: 8px; background: linear-gradient(90deg, #ffffff, #ffffff ' + skill.percentage + '%, transparent ' + skill.percentage + '%);'">
-                                    <div class="progress-bar bg-primary" role="progressbar" x-bind:style="'width:' + skill.percentage + '%; transition: width 0.5s ease;'"></div>
+                                <p class="h4 fw-bold text-light" x-text="skill.title"></p>
+                                <div class="percentage-container mt-2" x-bind:style="'background-color: black; width: ' + Math.max(skill.percentage, 10) + '%;'">
+                                    <span class="text-white fw-bold" x-text="skill.percentage + '%'"></span>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    
                     
                     
                 </template>
