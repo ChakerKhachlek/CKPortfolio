@@ -166,13 +166,13 @@
             x-init="() => { fetch('https://chakerkhachlek.github.io/CKPortfolio/assets/json/skills.json').then(response => response.json()).then(data => skills = data) }">
             <div x-show="skills.length > 0" class="row d-flex align-items-center justify-content-center text-nowrap text-center text-light mb-5">
                 <template x-for="skill in skills" :key="skill.title">
-                    <div class="col-md-4 mb-4 icon" style="z-index:1000">
+                    <div class="col-md-3 mb-4 icon" style="z-index:1000">
                         <div class="d-flex justify-content-center align-items-center p-1 rounded" style="background-color: #f8f9fa87; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
                             <div style="padding: 10px; background-color: white; border-radius: 50%;">
-                                <img :src="skill.img_logo" alt="Logo" class="w-6 img-responsive" height="50px" width="50px">
+                                <img :src="skill.img_logo" alt="Logo" class="w-6 img-responsive img-fluid" height="50px" width="50px">
                             </div>
                             <div class="ms-4">
-                                <div class="h6 fw-bold text-light" x-text="skill.title"></div>
+                                <div class="text fw-bold text-light" x-text="skill.title"></div>
                                 <div class="percentage-container mt-2" style="background-color: black; width: 100px">
                                     <span class="text-white fw-bold" x-text="skill.percentage + '%'"></span>
                                 </div>
