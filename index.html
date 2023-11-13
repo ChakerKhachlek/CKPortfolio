@@ -22,8 +22,8 @@
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <!-- Include Ripples.js -->
     <script src="https://cdn.rawgit.com/sirxemic/jquery.ripples/master/dist/jquery.ripples-min.js"></script>
-    </head>
-<body>
+</head>
+<body x-data="{ skills: [] }">
 
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top"
@@ -160,6 +160,29 @@
                     <h2 class="animated-heading">Skills</h2>
                 </div>
                 <div class="col"></div>
+            </div>
+
+            <div x-data="{ skills: [] }"
+             x-init="() => { fetch('https://chakerkhachlek.github.io/CKPortfolio/assets/json/skills.json').then(response => response.json()).then(data => skills = data) }"
+             >
+
+             <div x-show="skills.length > 0" class="mt-4">
+                <template x-for="skill in skills" :key="skill.title">
+                    <div class="d-flex align-items-center mb-4">
+                        <img :src="skill.img_logo" alt="Logo" class="w-8 h-8 me-4">
+                        <div>
+                            <h2 class="text-xl fw-bold">{{ skill.title }}</h2>
+                            <div class="progress mt-2" style="height: 2px;">
+                                <div :style="'width:' + skill.percentage + '%'" class="progress-bar bg-primary" role="progressbar"></div>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            </div>
+            
+            
+
+
             </div>
         </div>
     </div>
@@ -357,6 +380,9 @@
         
         
     </script>
+
+     <!-- Include Alpine.js -->
+     <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer></script>
 
 </body>
 </html>
