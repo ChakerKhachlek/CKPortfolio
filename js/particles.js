@@ -1,3 +1,7 @@
+/**
+ * @author Chaker KHACHLEK
+ */
+
 particlesJS('particles-js',
   {
     "particles": {
