@@ -88,8 +88,10 @@ footer {
     100% 100%,
     0% 100%
   );
+  z-index: 1;
   background-color: black; /* White color */
   opacity: 0.2; /* Adjust the opacity as needed */
+  pointer-events: none;
 }
 
 /* ---- section-separator ---- */
