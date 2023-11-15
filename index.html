@@ -23,10 +23,10 @@
     <!-- Include Ripples.js -->
     <script src="https://cdn.rawgit.com/sirxemic/jquery.ripples/master/dist/jquery.ripples-min.js"></script>
     <!-- Include Alpine.js -->
-    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.2/dist/cdn.min.js"></script>
 </head>
 
-<body x-data="{ skills: [] }">
+<body>
 
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top"
@@ -225,6 +225,77 @@
                 </div>
                 <div class="col"></div>
             </div>
+            <div x-data="{ projects: [], showModal: false, currentProject: null }" x-init="() => {
+                fetch('https://chakerkhachlek.github.io/CKPortfolio/assets/json/projects.json')
+                    .then(response => response.json())
+                    .then(data => projects = data);
+            }">
+
+                <div class="container">
+                    <div class="row">
+                        <template x-for="project in projects" :key="project.title">
+                            <div class="col-lg-4 col-md-4 col-sm-6">
+                                <div data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                    @click="currentProject = project; showModal = true; console.log('Modal Triggered'+ currentProject.title)"
+                                    class="card mb-4" style="cursor: pointer;"
+                                    style="background-color: #f8f9fa87; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                                    &nbsp; > sudo
+                                    <img class=" image-responsive" height="500px" :src="project.img_link"
+                                        alt="Card image cap">
+                                    <h4 class="text-dark text-center mt-2"
+                                        style="font-family: 'Fira Code', monospace; font-size: 1.2rem; font-weight: bold; padding: 10px; background-color: white; border-radius: 50%;"
+                                        x-text="project.title"></h4>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+
+                <div x-show="showModal" class="modal fade" id="exampleModal" tabindex="-1" aria-hidden="true"
+                    role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header bg-dark">
+                                <h5 class="modal-title text-light text-center"
+                                    x-text="currentProject ? currentProject.title : ''"></h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body bg-dark">
+                                <div class="container">
+                                    <div class="row text-light">
+                                        <div class="col-md-12">
+                                            <p class="" x-text="currentProject ? currentProject.description : ''"></p>
+                                            <p><strong>Technologies:</strong> <span class="badge bg-light text-dark"
+                                                    x-text="currentProject ? currentProject.technologies : ''"></span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row my-4">
+                                    <div class="col-md-12 text-center">
+                                        <h4 class="text-white">Snips</h4>
+                                    </div>
+                                </div>
+
+                                <template x-for="(screenshot, index) in currentProject.screenshots" :key="index">
+                                    <div class="row text-center my-3">
+                                        <div class="col-md-12">
+                                            <img :src="screenshot" class="img-fluid rounded" alt="Screenshot"
+                                                style="width: 70%;">
+                                        </div>
+                                    </div>
+                                </template>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
         </div>
     </div>
     <!-- Projects Section End -->
@@ -429,6 +500,7 @@
 
     <!-- Script to display the current year -->
     <script>
+        console.log("Hi Hacker! Take whatever you want there is nothing to hide https://github.com/ChakerKhachlek/CKPortfolio")
         document.getElementById("currentYear").textContent =
             new Date().getFullYear();
     </script>
