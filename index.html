@@ -239,7 +239,7 @@
                         <template x-for="project in projects" :key="project.title">
                             <div class="col-lg-4 col-md-4 col-sm-6">
                                 <div data-bs-toggle="modal" data-bs-target="#exampleModal"
-                                    @click="currentProject = project; showModal = true; console.log('Modal Triggered'+ currentProject.title)"
+                                    @click="currentProject = project; showModal = true;"
                                     class="card mb-4" style="cursor: pointer;"
                                     style="background-color: #f8f9fa87; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
                                     &nbsp; > sudo
@@ -282,8 +282,8 @@
                                         <h4 class="text-white">Snips</h4>
                                     </div>
                                 </div>
-
-                                <template x-for="(screenshot, index) in currentProject.screenshots" :key="index">
+                                <template x-if="currentProject && currentProject.screenshots">
+                                <template x-for="(screenshot, index) in currentProject.screenshots"  :key="index">
                                     <div class="row text-center my-3">
                                         <div class="col-md-12">
                                             <img :src="screenshot" class="img-fluid rounded" alt="Screenshot"
@@ -291,6 +291,7 @@
                                         </div>
                                     </div>
                                 </template>
+                            </template>
                             </div>
                         </div>
                     </div>

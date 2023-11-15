@@ -1,10 +1,11 @@
 [
   {
     "title": "Accreditation platform",
-    "img_link": "https://i.ibb.co/tPPGhWq/b1d47fe5-17ae-48c0-8090-4d24e0906184.png",
+    "img_link": "https://i.ibb.co/CbzqMqS/Screenshot-1.jpg",
     "description": "The implementation of an accreditation system played a crucial role in accrediting over 3500 participants from 54 African countries, significantly contributing to the success of the African Beach Games held in Hammamet. The participant registration process, spanning preliminary stages, long lists, short lists, arrivals, and departures, was meticulously executed. A pre-accreditation process, akin to obtaining a visa, was established for participants, ensuring a seamless entry experience. The system facilitated the generation of distinct printable badges for each participant based on their role. Additionally, it offered a comprehensive overview of all participants, equipped with export tools for efficient data management. This accreditation system not only streamlined participant logistics but also played a pivotal role in enhancing the overall organizational success of the event.",
     "technologies": "React , Express, Node JS, MongoDB, Digital Ocean, Websockets, JWT",
     "screenshots": [
+      "https://i.ibb.co/tPPGhWq/b1d47fe5-17ae-48c0-8090-4d24e0906184.png",
       "https://i.ibb.co/sWJ41WQ/Screenshot-2.jpg",
       "https://i.ibb.co/2kZkM2g/Screenshot-3.jpg",
       "https://i.ibb.co/D7NYSsT/Screenshot-4.jpg",
