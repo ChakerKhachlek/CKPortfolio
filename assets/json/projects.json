@@ -119,7 +119,7 @@
   },
   {
     "title": "Vr help",
-    "img_link": "ttps://i.ibb.co/x7WjzRQ/making-off2.png",
+    "img_link": "https://i.ibb.co/x7WjzRQ/making-off2.png",
     "description": "A school project, 3D virtual reality application for the purpose of helping people to express their feelings and emotions in a virtual world.",
     "technologies": "Unity 3D, Vr Chat, C#",
     "screenshots": [
