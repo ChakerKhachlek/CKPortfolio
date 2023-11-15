@@ -1,7 +1,7 @@
 [
   {
     "title": "Accreditation platform",
-    "img_link": "https://i.ibb.co/D4HXW0B/screencapture-localhost-8000-2020-12-30-18-10-33.png",
+    "img_link": "https://i.ibb.co/tZ3Q3s3/Screenshot-1.jpg",
     "description": "The implementation of an accreditation system played a crucial role in accrediting over 3500 participants from 54 African countries, significantly contributing to the success of the African Beach Games held in Hammamet. The participant registration process, spanning preliminary stages, long lists, short lists, arrivals, and departures, was meticulously executed. A pre-accreditation process, akin to obtaining a visa, was established for participants, ensuring a seamless entry experience. The system facilitated the generation of distinct printable badges for each participant based on their role. Additionally, it offered a comprehensive overview of all participants, equipped with export tools for efficient data management. This accreditation system not only streamlined participant logistics but also played a pivotal role in enhancing the overall organizational success of the event.",
     "technologies": "React , Express, Node JS, MongoDB, Digital Ocean, Websockets, JWT",
     "screenshots": [
@@ -22,7 +22,7 @@
   },
   {
     "title": "Ecowarriors",
-    "img_link": "https://i.ibb.co/K54V8jm/download-1.png",
+    "img_link": "https://i.ibb.co/9H8R6dG/stou-water-nature-clan-image-no-text-only-logo-color-1e90ff-979c121b-cbb3-4d78-8009-47de84ebca37.png",
     "description": "The platform presents a gamified experience, introducing an innovative approach that seamlessly integrates social networks, gaming, and education, all while fostering environmental preservation and sustainable development. A module validates real-life quests completed by players, allowing the upload of videos or images as proof. The platform employs AI to generate avatars using the stable broadcast API. A dynamic system of experience points and rewards adapts based on the player's level, creating a personalized and evolving journey. Complementing this, a real-time chat module and notifications enhance user engagement. Furthermore, the platform introduces collectible cards, offering a tangible and rewarding aspect to the gaming experience. Players can level up, achieving milestone badges that unlock unique rewards, creating an immersive and motivating ecosystem for users.",
     "technologies": "React , Express, Node JS, MongoDB, Digital Ocean, Websockets, JWT",
     "screenshots": [
@@ -111,7 +111,6 @@
     "description": "Spirit of Life is a dynamic web application meticulously crafted with Laravel and Laravel Livewire, designed specifically for association needs. This bespoke digital solution encapsulates a seamless blend of cutting-edge technology and purposeful design, empowering associations with a robust online presence and intuitive functionality.",
     "technologies": "Laravel, Livewire Framework, Bootstrap 4, Heroku web apps, MVC Architecture",
     "screenshots": [
-      "https://i.ibb.co/3BKPrch/smart-band-on-white-background-600w-1911265585.webp",
       "https://i.ibb.co/80gQwVk/spiritoflife-dashboard.png",
       "https://i.ibb.co/H73pzPH/Inkedspirit-of-life-herokuapp-manage-products-2022-04-08-04-54-35-LI.jpg",
       "https://i.ibb.co/2jqqRXp/Inkedspirit-of-life-herokuapp-manage-members-2022-04-08-04-55-03-LI.jpg",
@@ -120,7 +119,7 @@
   },
   {
     "title": "Vr help",
-    "img_link": "https://ibb.co/yyPmcmp",
+    "img_link": "ttps://i.ibb.co/x7WjzRQ/making-off2.png",
     "description": "A school project, 3D virtual reality application for the purpose of helping people to express their feelings and emotions in a virtual world.",
     "technologies": "Unity 3D, Vr Chat, C#",
     "screenshots": [
