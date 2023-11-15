@@ -1,7 +1,7 @@
 [
   {
     "title": "Accreditation platform",
-    "img_link": "https://i.ibb.co/tZ3Q3s3/Screenshot-1.jpg",
+    "img_link": "https://i.ibb.co/tPPGhWq/b1d47fe5-17ae-48c0-8090-4d24e0906184.png",
     "description": "The implementation of an accreditation system played a crucial role in accrediting over 3500 participants from 54 African countries, significantly contributing to the success of the African Beach Games held in Hammamet. The participant registration process, spanning preliminary stages, long lists, short lists, arrivals, and departures, was meticulously executed. A pre-accreditation process, akin to obtaining a visa, was established for participants, ensuring a seamless entry experience. The system facilitated the generation of distinct printable badges for each participant based on their role. Additionally, it offered a comprehensive overview of all participants, equipped with export tools for efficient data management. This accreditation system not only streamlined participant logistics but also played a pivotal role in enhancing the overall organizational success of the event.",
     "technologies": "React , Express, Node JS, MongoDB, Digital Ocean, Websockets, JWT",
     "screenshots": [
@@ -107,7 +107,7 @@
   },
   {
     "title": "Spirit of life",
-    "img_link": "https://i.ibb.co/rHqzgt8/spirit-of-life-head.png",
+    "img_link": "https://i.ibb.co/z6Rxcv4/spirit-of-life-head.png",
     "description": "Spirit of Life is a dynamic web application meticulously crafted with Laravel and Laravel Livewire, designed specifically for association needs. This bespoke digital solution encapsulates a seamless blend of cutting-edge technology and purposeful design, empowering associations with a robust online presence and intuitive functionality.",
     "technologies": "Laravel, Livewire Framework, Bootstrap 4, Heroku web apps, MVC Architecture",
     "screenshots": [
@@ -138,7 +138,7 @@
   },
   {
     "title": "Social network app",
-    "img_link": "https://i.ibb.co/h1dkHGs/head-socialcodenameone.png",
+    "img_link": "https://i.ibb.co/Mf1vjpM/login.png",
     "description": "A school project, android app coded with Java and Codenameone framework, the purpose of this app is to help people to connect with each other and share their feelings and emotions.",
     "technologies": "Java, Codenameone framework, Restful Api's, Netbeans IDE",
     "screenshots": [
