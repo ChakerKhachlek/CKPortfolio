@@ -54,7 +54,7 @@
     "title": "Online heaven platform",
     "img_link": "https://i.ibb.co/D4HXW0B/screencapture-localhost-8000-2020-12-30-18-10-33.png",
     "description": "Online Heaven Platform represents a solution for the broadcasting of animated series, the sharing of publications, and the collection of information about video games. This platform is the answer to the needs of the community.",
-    "technologies": "Laravel, Livewire Framework, RAWG api, Angular 8, Heroku web apps, Bootstrap 4",
+    "technologies": "Symfony, RAWG api, Angular 8, Heroku web apps, Bootstrap 4",
     "screenshots": [
       "https://i.ibb.co/zm7vB9G/screenshot-localhost-8000-stream-episode-35-1605124084049.png",
       "https://i.ibb.co/2vxRpS9/screenshot-localhost-8000-stream-home-1605124009883.png",
