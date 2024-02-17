@@ -1,5 +1,20 @@
 [
   {
+    "title": "CS GO Market Analysis",
+    "img_link": "https://i.ibb.co/SKj2tbd/first.png",
+    "description": "The objective of this project is to apply data analysis techniques to understand trends in the CS:GO skins market. This could involve examining price fluctuations, identifying the most popular skins, analyzing rarity, and other aspects relevant to players, collectors, and investors involved in the skins market.",
+    "technologies": "Talend, ETL, Power BI, React",
+    "screenshots": [
+      "https://i.ibb.co/QjHkgWV/dashboard1.png",
+      "https://i.ibb.co/SPmfNz0/dashboard2.png",
+      "https://i.ibb.co/1q9ngyh/dashboard3.png",
+      "https://i.ibb.co/yBCkprB/web1.png",
+      "https://i.ibb.co/q56Gd50/web2.png",
+      "https://i.ibb.co/K71zc6v/web3.png",
+      "https://i.ibb.co/zR7gbTX/web4.png"
+    ]    
+  },
+  {
     "title": "Accreditation platform",
     "img_link": "https://i.ibb.co/CbzqMqS/Screenshot-1.jpg",
     "description": "The implementation of an accreditation system played a crucial role in accrediting over 3500 participants from 54 African countries, significantly contributing to the success of the African Beach Games held in Hammamet. The participant registration process, spanning preliminary stages, long lists, short lists, arrivals, and departures, was meticulously executed. A pre-accreditation process, akin to obtaining a visa, was established for participants, ensuring a seamless entry experience. The system facilitated the generation of distinct printable badges for each participant based on their role. Additionally, it offered a comprehensive overview of all participants, equipped with export tools for efficient data management. This accreditation system not only streamlined participant logistics but also played a pivotal role in enhancing the overall organizational success of the event.",
