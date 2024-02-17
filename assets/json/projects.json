@@ -1,7 +1,21 @@
 [
   {
+    "title": "QCM Generator",
+    "img_link": "https://i.ibb.co/18b8mzj/2.png",
+    "description": "The 'QCM Generator' is a React-based school project that uses the GPT-3.5 Turbo model to instantly create single-choice questions (SCQs) from user input. It streamlines exam preparation for students and provides teachers with a convenient assessment tool.",
+    "technologies": "React, GPT3, GPT3-Turbo Model, Text To Json Parsing",
+    "screenshots": [
+      "https://i.ibb.co/SXSv8kN/1.png",
+      "https://i.ibb.co/18b8mzj/2.png",
+      "https://i.ibb.co/C5B4C9X/3.png",
+      "https://i.ibb.co/89m0902/4.png",
+      "https://i.ibb.co/crdCZR8/5.png",
+      "https://i.ibb.co/6B88yKW/6.png"
+    ]    
+  },
+  {
     "title": "CS GO Market Analysis",
-    "img_link": "https://i.ibb.co/SKj2tbd/first.png",
+    "img_link": "https://i.ibb.co/K71zc6v/web3.png",
     "description": "The objective of this project is to apply data analysis techniques to understand trends in the CS:GO skins market. This could involve examining price fluctuations, identifying the most popular skins, analyzing rarity, and other aspects relevant to players, collectors, and investors involved in the skins market.",
     "technologies": "Talend, ETL, Power BI, React",
     "screenshots": [
