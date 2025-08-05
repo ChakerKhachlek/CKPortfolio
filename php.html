@@ -85,8 +85,8 @@
 
   <div class="container">
     <div class="text-center mb-4">
-      <h1>📘 PHP Complete Course</h1>
-      <p class="subheading">A beginner-friendly, example-rich course on PHP fundamentals and features</p>
+      <h1>📘 PHP Cheat Sheet</h1>
+      <p class="subheading">A beginner-friendly, cheat sheet on PHP fundamentals and features</p>
     </div>
 
     <div id="course-content"></div>
@@ -97,58 +97,94 @@
 
   <!-- Prism.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-php.min.js"></script>
-
+ 
   <script>
     async function loadCourse() {
       try {
         const res = await fetch('https://chakerkhachlek.github.io/CKPortfolio/assets/json/cheat-sheets/php-cheatsheet.json');
+        console.log("Fetch status:", res.status);
         const data = await res.json();
         const container = document.getElementById('course-content');
-
+  
         data.modules.forEach((module, moduleIndex) => {
           const accordionId = `accordion-${moduleIndex}`;
           const accordion = document.createElement('div');
-          accordion.className = "accordion";
+          accordion.className = "accordion mb-4";
           accordion.id = accordionId;
-
+  
           // Section title
           const sectionTitle = document.createElement('h3');
           sectionTitle.className = "section-title";
           sectionTitle.textContent = module.title;
           container.appendChild(sectionTitle);
-
+  
           // Lessons inside accordion
           module.lessons.forEach((lesson, lessonIndex) => {
             const itemId = `item-${moduleIndex}-${lessonIndex}`;
-            accordion.innerHTML += `
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="heading-${itemId}">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-${itemId}" aria-expanded="false" aria-controls="collapse-${itemId}">
-                    ${lesson.title}
-                  </button>
-                </h2>
-                <div id="collapse-${itemId}" class="accordion-collapse collapse" aria-labelledby="heading-${itemId}" data-bs-parent="#${accordionId}">
-                  <div class="accordion-body">
-                    <p class="lesson-note">${lesson.note}</p>
-                    <pre><code class="language-php">${lesson.code}</code></pre>
-                  </div>
-                </div>
-              </div>
-            `;
+  
+            // Create accordion-item
+            const accordionItem = document.createElement('div');
+            accordionItem.className = "accordion-item";
+  
+            // Header
+            const header = document.createElement('h2');
+            header.className = "accordion-header";
+            header.id = `heading-${itemId}`;
+  
+            const button = document.createElement('button');
+            button.className = "accordion-button collapsed";
+            button.type = "button";
+            button.setAttribute('data-bs-toggle', 'collapse');
+            button.setAttribute('data-bs-target', `#collapse-${itemId}`);
+            button.setAttribute('aria-expanded', 'false');
+            button.setAttribute('aria-controls', `collapse-${itemId}`);
+            button.textContent = lesson.title;
+  
+            header.appendChild(button);
+            accordionItem.appendChild(header);
+  
+            // Collapse content
+            const collapseDiv = document.createElement('div');
+            collapseDiv.id = `collapse-${itemId}`;
+            collapseDiv.className = "accordion-collapse collapse";
+            collapseDiv.setAttribute('aria-labelledby', `heading-${itemId}`);
+            collapseDiv.setAttribute('data-bs-parent', `#${accordionId}`);
+  
+            const body = document.createElement('div');
+            body.className = "accordion-body";
+  
+            // Lesson note
+            const note = document.createElement('p');
+            note.className = "lesson-note";
+            note.textContent = lesson.note;
+  
+            // Code block with safe textContent injection
+            const pre = document.createElement('pre');
+            const code = document.createElement('code');
+            code.className = "language-markup";
+            code.textContent = lesson.code;
+  
+            pre.appendChild(code);
+            body.appendChild(note);
+            body.appendChild(pre);
+            collapseDiv.appendChild(body);
+            accordionItem.appendChild(collapseDiv);
+  
+            accordion.appendChild(accordionItem);
           });
-
+  
           container.appendChild(accordion);
         });
-
+  
         Prism.highlightAll();
       } catch (error) {
         console.error("Failed to load course content:", error);
         document.getElementById('course-content').innerHTML = `<div class="alert alert-danger">Unable to load course content. Please check the file path or JSON structure.</div>`;
       }
     }
-
+  
     document.addEventListener("DOMContentLoaded", loadCourse);
   </script>
+  
 </body>
 </html>
