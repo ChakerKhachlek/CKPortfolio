@@ -178,35 +178,40 @@
                 figure out. &rdquo;
             </blockquote>
 
-            <div class="mb-5 " x-data="{ technologies: [] }"
-                x-init="() => { fetch('https://chakerkhachlek.github.io/CKPortfolio/assets/json/technologies.json').then(response => response.json()).then(data => technologies = data) }">
-                <div x-show="technologies.length > 0"
-                    class="row d-flex align-items-center justify-content-center text-nowrap text-center text-light mb-5">
-                    <template x-for="technology in technologies" :key="technology.title">
-                        <div class="col-md-3 mb-4 icon" style="z-index:1000">
-                            <div class="d-flex justify-content-center align-items-center p-1 rounded"
-                                style="background-color: #f8f9fa87; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-                                <div style="padding: 10px; background-color: white; border-radius: 50%;">
-                                    <img :src="technology.img_logo" alt="Logo" class="w-6 img-responsive img-fluid"
-                                        height="50px" width="50px">
-                                </div>
-                                <div class="ms-4">
-                                    <div class="text fw-bold text-light" x-text="technology.title"></div>
-                                    <div class="percentage-container mt-2"
-                                        style="background-color: black; width: 100px">
-                                        <span class="text-white fw-bold" x-text="technology.percentage + '%'"></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-
-                    </template>
-                </div>
-
-
+<div class="mb-5" x-data="{ technologies: [] }"
+     x-init="fetch('https://chakerkhachlek.github.io/CKPortfolio/assets/json/technologies.json')
+       .then(response => response.json())
+       .then(data => technologies = data)">
+  <div x-show="technologies.length > 0"
+       class="row d-flex align-items-center justify-content-center text-nowrap text-center text-light mb-5">
+    <template x-for="technology in technologies" :key="technology.title">
+      <div class="col-md-3 mb-4 icon" style="z-index:1000">
+        <div class="d-flex justify-content-center align-items-center p-3 rounded"
+             style="background-color: #f8f9fa87; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+          <div style="padding: 10px; background-color: white; border-radius: 50%;">
+            <img :src="technology.img_logo" alt="Logo" class="w-6 img-responsive img-fluid" height="50" width="50">
+          </div>
+          <div class="ms-4 text-start" style="flex-grow:1;">
+            <div class="text fw-bold text-light" x-text="technology.title"></div>
+            <div class="percentage-container mt-2" style="background-color: black; width: 100px; border-radius: 5px;">
+              <span class="text-white fw-bold" x-text="technology.percentage + '%'"></span>
             </div>
+
+            <!-- Show cheatSheetLink button if present -->
+            <template x-if="technology.cheatSheetLink">
+              <a :href="technology.cheatSheetLink" target="_blank"
+                 class="btn btn-sm btn-primary mt-3 d-inline-block"
+                 style="font-weight: 600; border-radius: 20px; padding: 5px 15px; text-decoration: none;">
+                View Cheatsheet
+              </a>
+            </template>
+          </div>
+        </div>
+      </div>
+    </template>
+  </div>
+</div>
+
 
         </div>
     </div>

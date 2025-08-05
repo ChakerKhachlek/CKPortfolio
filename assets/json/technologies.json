@@ -13,7 +13,7 @@
     {"title": "Docker", "percentage": 95, "img_logo": "assets/img/technology_logos/Docker.png"},
     {"title": "JavaScript", "percentage": 90, "img_logo": "assets/img/technology_logos/JavaScript.png"},
     {"title": "Java", "percentage": 85, "img_logo": "assets/img/technology_logos/Java.png"},
-    {"title": "PHP", "percentage": 80, "img_logo": "assets/img/technology_logos/PHP.png"},
+    {"title": "PHP", "cheatSheetLink":"php.html", "percentage": 80, "img_logo": "assets/img/technology_logos/PHP.png"},
     {"title": "Python", "percentage": 80, "img_logo": "assets/img/technology_logos/Python.png"},
     {"title": "NetBeans", "percentage": 95, "img_logo": "assets/img/technology_logos/NetBeans.png"},
     {"title": "Android", "percentage": 95, "img_logo": "assets/img/technology_logos/Android.png"},
