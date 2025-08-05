@@ -1,0 +1,81 @@
+{
+    "title": "PHP Complete Course",
+    "modules": [
+      {
+        "title": "1. PHP Basics",
+        "lessons": [
+          {
+            "title": "Introduction to PHP",
+            "note": "PHP is a popular server-side scripting language designed for web development.",
+            "code": "<?php\n// Your first PHP code\n?>"
+          },
+          {
+            "title": "Echo Statement",
+            "note": "Outputs text or variables to the browser.",
+            "code": "<?php\necho \"Hello, World!\";\n?>"
+          },
+          {
+            "title": "Variables & Data Types",
+            "note": "PHP supports strings, integers, floats, booleans, arrays, and objects.",
+            "code": "<?php\n$name = \"Alice\";\n$age = 30;\n$loggedIn = true;\n?>"
+          }
+        ]
+      },
+      {
+        "title": "2. Control Structures",
+        "lessons": [
+          {
+            "title": "If / Else",
+            "note": "Basic conditionals in PHP.",
+            "code": "<?php\nif ($age >= 18) {\n  echo \"Adult\";\n} else {\n  echo \"Minor\";\n}\n?>"
+          },
+          {
+            "title": "Switch Statement",
+            "note": "Use when testing multiple values.",
+            "code": "<?php\nswitch ($status) {\n  case 'active': echo 'Active'; break;\n  case 'inactive': echo 'Inactive'; break;\n  default: echo 'Unknown';\n}\n?>"
+          },
+          {
+            "title": "Loops",
+            "note": "PHP supports for, while, do...while, and foreach loops.",
+            "code": "<?php\nfor ($i = 0; $i < 5; $i++) {\n  echo $i;\n}\n?>"
+          }
+        ]
+      },
+      {
+        "title": "3. Functions",
+        "lessons": [
+          {
+            "title": "User-defined Functions",
+            "note": "Functions are reusable blocks of code.",
+            "code": "<?php\nfunction greet($name) {\n  return \"Hello, $name!\";\n}\n?>"
+          },
+          {
+            "title": "Return Values",
+            "note": "Functions can return values using return.",
+            "code": "<?php\nfunction sum($a, $b) {\n  return $a + $b;\n}\n?>"
+          },
+          {
+            "title": "Type Declarations",
+            "note": "PHP 7+ allows scalar type hints and return types.",
+            "code": "<?php\nfunction add(int $a, int $b): int {\n  return $a + $b;\n}\n?>"
+          }
+        ]
+      },
+      {
+        "title": "4. PHP 8 Features",
+        "lessons": [
+          {
+            "title": "Match Expression",
+            "note": "A cleaner alternative to switch.",
+            "code": "<?php\n$result = match($status) {\n  'active' => 'Active',\n  'inactive' => 'Inactive',\n  default => 'Unknown'\n};\n?>"
+          },
+          {
+            "title": "Constructor Property Promotion",
+            "note": "Define and assign properties directly in the constructor.",
+            "code": "<?php\nclass User {\n  public function __construct(\n    private string $name,\n    private int $age\n  ) {}\n}\n?>"
+          }
+        ]
+      }
+    ]
+  }
+  
