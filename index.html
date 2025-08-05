@@ -5,11 +5,11 @@
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-8K4Z6ZJ7WC"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-    gtag('config', 'G-8K4Z6ZJ7WC');
+        gtag('config', 'G-8K4Z6ZJ7WC');
     </script>
     <meta charset="utf-8">
     <!-- Page title -->
@@ -141,7 +141,8 @@
             </div>
             <div class="row text-center mt-2">
                 <a style="z-index: 1000;" class="text-light text-decoration-none zindex-tooltip"
-                    href="assets/pdf/chaker_khachlek_cv_fr.pdf" download="assets/pdf/chaker_khachlek_cv_fr.pdf"> Detailed French Curriculum
+                    href="assets/pdf/chaker_khachlek_cv_fr.pdf" download="assets/pdf/chaker_khachlek_cv_fr.pdf">
+                    Detailed French Curriculum
                     Vitae
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                         class="bi bi-cloud-download-fill" viewBox="0 0 16 16">
@@ -178,35 +179,34 @@
                 figure out. &rdquo;
             </blockquote>
 
-            <div class="mb-5" x-data="{ technologies: [] }"
-     x-init="fetch('https://chakerkhachlek.github.io/CKPortfolio/assets/json/technologies.json')
+            <div class="mb-5" x-data="{ technologies: [] }" x-init="fetch('https://chakerkhachlek.github.io/CKPortfolio/assets/json/technologies.json')
        .then(response => response.json())
        .then(data => technologies = data)">
-  <div x-show="technologies.length > 0" class="row justify-content-center gy-4">
-    <template x-for="technology in technologies" :key="technology.title">
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-        <div class="technology-card">
-          <div class="tech-logo">
-            <img :src="technology.img_logo" :alt="technology.title + ' logo'">
-          </div>
-          <div class="tech-info">
-            <div class="tech-title" x-text="technology.title"></div>
-            <div class="percentage-bar-container" :title="technology.percentage + '%'">
-              <div class="percentage-bar" :style="'width:' + technology.percentage + '%'">
-                <span x-text="technology.percentage + '%'"></span>
-              </div>
+                <div x-show="technologies.length > 0" class="row justify-content-center gy-4">
+                    <template x-for="technology in technologies" :key="technology.title">
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="technology-card">
+                                <div class="tech-logo">
+                                    <img :src="technology.img_logo" :alt="technology.title + ' logo'">
+                                </div>
+                                <div class="tech-info">
+                                    <div class="tech-title" x-text="technology.title"></div>
+                                    <div class="percentage-bar-container" :title="technology.percentage + '%'">
+                                        <div class="percentage-bar" :style="'width:' + technology.percentage + '%'">
+                                            <span x-text="technology.percentage + '%'"></span>
+                                        </div>
+                                    </div>
+                                    <template x-if="technology.cheatSheetLink">
+                                        <a :href="technology.cheatSheetLink" target="_blank" class="btn btn-cheatsheet">
+                                            View Cheatsheet
+                                        </a>
+                                    </template>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+                </div>
             </div>
-            <template x-if="technology.cheatSheetLink">
-              <a :href="technology.cheatSheetLink" target="_blank" class="btn btn-cheatsheet">
-                View Cheatsheet
-              </a>
-            </template>
-          </div>
-        </div>
-      </div>
-    </template>
-  </div>
-</div>
 
         </div>
     </div>
@@ -248,8 +248,8 @@
                         <template x-for="project in projects" :key="project.title">
                             <div class="col-lg-6 col-md-6 col-sm-6 my-3">
                                 <div data-bs-toggle="modal" data-bs-target="#exampleModal"
-                                    @click="currentProject = project; showModal = true;"
-                                    class="card mb-6" style="cursor: pointer;"
+                                    @click="currentProject = project; showModal = true;" class="card mb-6"
+                                    style="cursor: pointer;"
                                     style="background-color: #f8f9fa87; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
                                     &nbsp; > sudo
                                     <img class=" image-responsive" height="500px" :src="project.img_link"
@@ -278,8 +278,10 @@
                                     <div class="row text-light">
                                         <div class="col-md-12">
                                             <p class="" x-text="currentProject ? currentProject.description : ''"></p>
-                                            <p><strong>Technologies:</strong> <span class="badge ml-3 bg-light text-dark "
-                                                    x-text="currentProject ? currentProject.technologies : ''" style="text-wrap: wrap;"></span>
+                                            <p><strong>Technologies:</strong> <span
+                                                    class="badge ml-3 bg-light text-dark "
+                                                    x-text="currentProject ? currentProject.technologies : ''"
+                                                    style="text-wrap: wrap;"></span>
                                             </p>
                                             <p></p>
                                         </div>
@@ -292,15 +294,15 @@
                                     </div>
                                 </div>
                                 <template x-if="currentProject && currentProject.screenshots">
-                                <template x-for="(screenshot, index) in currentProject.screenshots"  :key="index">
-                                    <div class="row text-center my-3">
-                                        <div class="col-md-12">
-                                            <img :src="screenshot" class="img-fluid rounded" alt="Screenshot"
-                                                style="width: 70%;">
+                                    <template x-for="(screenshot, index) in currentProject.screenshots" :key="index">
+                                        <div class="row text-center my-3">
+                                            <div class="col-md-12">
+                                                <img :src="screenshot" class="img-fluid rounded" alt="Screenshot"
+                                                    style="width: 70%;">
+                                            </div>
                                         </div>
-                                    </div>
+                                    </template>
                                 </template>
-                            </template>
                             </div>
                         </div>
                     </div>
@@ -588,7 +590,7 @@
         }
     </script>
 
-    
+
 
 </body>
 
