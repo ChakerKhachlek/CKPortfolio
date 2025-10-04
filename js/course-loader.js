@@ -1,4 +1,4 @@
-async function loadCourse(title, jsonUrl) {
+async function loadCourse(jsonUrl) {
     try {
         // Set course title
         const courseTitle = document.getElementById("course-title");
