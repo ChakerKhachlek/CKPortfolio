@@ -29,7 +29,7 @@ async function loadCourse(jsonUrl) {
             module.lessons.forEach((lesson, lessonIndex) => {
                 const itemId = `item-${moduleIndex}-${lessonIndex}`;
                 const card = document.createElement("div");
-                card.className = "accordion-item mb-2"; // small spacing between lessons
+                card.className = "accordion-item p-2 mb-2"; // small spacing between lessons
 
                 // Lesson title button
                 const header = document.createElement("h2");
@@ -55,7 +55,7 @@ async function loadCourse(jsonUrl) {
                 // remove data-bs-parent to allow multiple open
 
                 const body = document.createElement("div");
-                body.className = "accordion-body";
+                body.className = "accordion-body p-2";
 
                 const note = document.createElement("p");
                 note.className = "lesson-note";
@@ -67,8 +67,8 @@ async function loadCourse(jsonUrl) {
                 code.textContent = lesson.code;
 
                 pre.appendChild(code);
-                body.appendChild(note);
                 body.appendChild(pre);
+                collapseDiv.appendChild(note);
                 collapseDiv.appendChild(body);
                 card.appendChild(collapseDiv);
 
