@@ -112,3 +112,4 @@ async function loadCourse(title, jsonUrl) {
         console.error("Failed to load course data:", error);
     }
 }
+
