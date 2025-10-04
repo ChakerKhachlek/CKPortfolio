@@ -1,108 +1,114 @@
-async function loadCourse($courseLink) {
-            try {
-                const res = await fetch($courseLink);
-                const data = await res.json();
-                const container = document.getElementById("course-content");
-                const summaryContainer = document.getElementById("course-summary");
+async function loadCourse(title, jsonUrl) {
+    try {
+        // Set course title
+        const courseTitle = document.getElementById("course-title");
+        if (courseTitle) courseTitle.textContent = title;
 
-                let summaryHTML = "";
+        // Fetch JSON data
+        const res = await fetch(jsonUrl);
+        const data = await res.json();
 
-                data.modules.forEach((module, moduleIndex) => {
-                    const accordionId = `accordion-${moduleIndex}`;
-                    const accordion = document.createElement("div");
-                    accordion.className = "accordion mb-4";
-                    accordion.id = accordionId;
+        const container = document.getElementById("course-content");
+        const summaryContainer = document.getElementById("course-summary");
 
-                    const sectionId = `section-${moduleIndex}`;
-                    const sectionTitle = document.createElement("h3");
-                    sectionTitle.className = "section-title";
-                    sectionTitle.id = sectionId;
-                    sectionTitle.textContent = module.title;
-                    container.appendChild(sectionTitle);
+        let summaryHTML = "";
 
-                    summaryHTML += `<button class="list-group-item list-group-item-action" data-target="#${sectionId}">${module.title}</button>`;
+        data.modules.forEach((module, moduleIndex) => {
+            // Section header
+            const sectionId = `section-${moduleIndex}`;
+            const sectionTitle = document.createElement("h3");
+            sectionTitle.className = "section-title";
+            sectionTitle.id = sectionId;
+            sectionTitle.textContent = module.title;
+            container.appendChild(sectionTitle);
 
-                    module.lessons.forEach((lesson, lessonIndex) => {
-                        const itemId = `item-${moduleIndex}-${lessonIndex}`;
-                        const accordionItem = document.createElement("div");
-                        accordionItem.className = "accordion-item";
+            // Add module to summary
+            summaryHTML += `<button class="list-group-item list-group-item-action" data-target="#${sectionId}">${module.title}</button>`;
 
-                        const header = document.createElement("h2");
-                        header.className = "accordion-header";
-                        header.id = `heading-${itemId}`;
+            // Lessons
+            module.lessons.forEach((lesson, lessonIndex) => {
+                const itemId = `item-${moduleIndex}-${lessonIndex}`;
+                const card = document.createElement("div");
+                card.className = "accordion-item mb-2"; // small spacing between lessons
 
-                        const button = document.createElement("button");
-                        button.className = "accordion-button"; // remove "collapsed" if present
-                        button.type = "button";
-                        button.setAttribute("data-bs-toggle", "collapse");
-                        button.setAttribute("data-bs-target", `#collapse-${itemId}`);
-                        button.setAttribute("aria-expanded", "true"); // set true to show
-                        button.setAttribute("aria-controls", `collapse-${itemId}`);
-                        button.textContent = lesson.title;
+                // Lesson title button
+                const header = document.createElement("h2");
+                header.className = "accordion-header";
 
-                        header.appendChild(button);
-                        accordionItem.appendChild(header);
+                const button = document.createElement("button");
+                button.className = "accordion-button"; // keep styling
+                button.type = "button";
+                button.setAttribute("data-bs-toggle", "collapse");
+                button.setAttribute("data-bs-target", `#collapse-${itemId}`);
+                button.setAttribute("aria-expanded", "true"); // open by default
+                button.setAttribute("aria-controls", `collapse-${itemId}`);
+                button.textContent = lesson.title;
 
-                        const collapseDiv = document.createElement("div");
-                        collapseDiv.id = `collapse-${itemId}`;
-                        collapseDiv.className = "accordion-collapse collapse show"; // add 'show' to make open
-                        collapseDiv.setAttribute("aria-labelledby", `heading-${itemId}`);
-                        collapseDiv.setAttribute("data-bs-parent", `#${accordionId}`);
+                header.appendChild(button);
+                card.appendChild(header);
 
-                        const body = document.createElement("div");
-                        body.className = "accordion-body";
+                // Lesson body (independent collapsible)
+                const collapseDiv = document.createElement("div");
+                collapseDiv.id = `collapse-${itemId}`;
+                collapseDiv.className = "accordion-collapse collapse show"; // open initially
+                collapseDiv.setAttribute("aria-labelledby", `heading-${itemId}`);
+                // remove data-bs-parent to allow multiple open
 
-                        const note = document.createElement("p");
-                        note.className = "lesson-note";
-                        note.textContent = lesson.note;
+                const body = document.createElement("div");
+                body.className = "accordion-body";
 
-                        const pre = document.createElement("pre");
-                        const code = document.createElement("code");
-                        code.className = "language-bash";
-                        code.textContent = lesson.code;
+                const note = document.createElement("p");
+                note.className = "lesson-note";
+                note.textContent = lesson.note;
 
-                        pre.appendChild(code);
-                        body.appendChild(note);
-                        body.appendChild(pre);
-                        collapseDiv.appendChild(body);
-                        accordionItem.appendChild(collapseDiv);
+                const pre = document.createElement("pre");
+                const code = document.createElement("code");
+                code.className = "language-bash"; // or language-php etc.
+                code.textContent = lesson.code;
 
-                        accordion.appendChild(accordionItem);
-                    });
+                pre.appendChild(code);
+                body.appendChild(note);
+                body.appendChild(pre);
+                collapseDiv.appendChild(body);
+                card.appendChild(collapseDiv);
 
-                    container.appendChild(accordion);
-                });
+                container.appendChild(card);
+            });
+        });
 
-                summaryContainer.innerHTML = summaryHTML;
+        summaryContainer.innerHTML = summaryHTML;
 
-                const summaryItems = summaryContainer.querySelectorAll(".list-group-item");
-                summaryItems.forEach((item) => {
-                    item.addEventListener("click", () => {
-                        const targetSelector = item.getAttribute("data-target");
-                        const targetElement = document.querySelector(targetSelector);
-                        if (targetElement) {
-                            targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
-                            summaryItems.forEach((i) => i.classList.remove("active"));
-                            item.classList.add("active");
-                        }
-                    });
-                });
+        // Summary click scroll
+        const summaryItems = summaryContainer.querySelectorAll(".list-group-item");
+        summaryItems.forEach((item) => {
+            item.addEventListener("click", () => {
+                const targetSelector = item.getAttribute("data-target");
+                const targetElement = document.querySelector(targetSelector);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+                    summaryItems.forEach((i) => i.classList.remove("active"));
+                    item.classList.add("active");
+                }
+            });
+        });
 
-                window.addEventListener("scroll", () => {
-                    let currentIndex = 0;
-                    for (let i = 0; i < summaryItems.length; i++) {
-                        const targetSelector = summaryItems[i].getAttribute("data-target");
-                        const targetElement = document.querySelector(targetSelector);
-                        if (targetElement) {
-                            const rect = targetElement.getBoundingClientRect();
-                            if (rect.top <= window.innerHeight / 3) currentIndex = i;
-                        }
-                    }
-                    summaryItems.forEach((item, idx) => item.classList.toggle("active", idx === currentIndex));
-                });
-
-                Prism.highlightAll();
-            } catch (error) {
-                console.error("Failed to load course data:", error);
+        // Highlight summary on scroll
+        window.addEventListener("scroll", () => {
+            let currentIndex = 0;
+            for (let i = 0; i < summaryItems.length; i++) {
+                const targetSelector = summaryItems[i].getAttribute("data-target");
+                const targetElement = document.querySelector(targetSelector);
+                if (targetElement) {
+                    const rect = targetElement.getBoundingClientRect();
+                    if (rect.top <= window.innerHeight / 3) currentIndex = i;
+                }
             }
-        }
+            summaryItems.forEach((item, idx) => item.classList.toggle("active", idx === currentIndex));
+        });
+
+        Prism.highlightAll();
+
+    } catch (error) {
+        console.error("Failed to load course data:", error);
+    }
+}
