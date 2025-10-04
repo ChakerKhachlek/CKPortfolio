@@ -63,7 +63,7 @@
     <script>
         async function loadCourse() {
             try {
-                const res = await fetch("kubernetes-cheatsheet.json");
+                const res = await fetch("https://chakerkhachlek.github.io/CKPortfolio/assets/json/cheat-sheets/kubernetes-cheatsheet.json");
                 const data = await res.json();
                 const container = document.getElementById("course-content");
                 const summaryContainer = document.getElementById("course-summary");
