@@ -57,6 +57,7 @@
     {
         "title": "Docker",
         "percentage": 75,
+        "cheatSheetLink": "cheat-sheets/docker.html",
         "img_logo": "assets/img/technology_logos/Docker.png"
     },
     {
@@ -71,7 +72,7 @@
     },
     {
         "title": "PHP",
-        "cheatSheetLink": "php.html",
+        "cheatSheetLink": "cheat-sheets/php.html",
         "percentage": 75,
         "img_logo": "assets/img/technology_logos/PHP.png"
     },
@@ -119,7 +120,7 @@
     {
         "title": "Kubernetes",
         "percentage": 75,
-        "cheatSheetLink": "kubernetes.html",
+        "cheatSheetLink": "cheat-sheets/kubernetes.html",
         "img_logo": "assets/img/technology_logos/kubernetes.png"
     }
 ]
