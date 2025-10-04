@@ -15,19 +15,20 @@ async function loadCourse(title, jsonUrl) {
 
         data.modules.forEach((module, moduleIndex) => {
             const sectionId = `section-${moduleIndex}`;
+
+            // Section title
             const sectionTitle = document.createElement("h3");
             sectionTitle.className = "section-title";
             sectionTitle.id = sectionId;
             sectionTitle.textContent = module.title;
             container.appendChild(sectionTitle);
 
-            // Add to summary
+            // Summary
             summaryHTML += `<button class="list-group-item list-group-item-action" data-target="#${sectionId}">${module.title}</button>`;
 
             module.lessons.forEach((lesson, lessonIndex) => {
-                const itemId = `item-${moduleIndex}-${lessonIndex}`;
                 const card = document.createElement("div");
-                card.className = "accordion-item"; // keep the design style
+                card.className = "accordion-item";
 
                 // Lesson title
                 const header = document.createElement("h2");
@@ -35,7 +36,7 @@ async function loadCourse(title, jsonUrl) {
                 header.textContent = lesson.title;
                 card.appendChild(header);
 
-                // Lesson body (always visible)
+                // Lesson content (always open)
                 const body = document.createElement("div");
                 body.className = "accordion-body";
 
@@ -45,7 +46,7 @@ async function loadCourse(title, jsonUrl) {
 
                 const pre = document.createElement("pre");
                 const code = document.createElement("code");
-                code.className = "language-bash"; // you can adjust per course
+                code.className = "language-bash"; 
                 code.textContent = lesson.code;
 
                 pre.appendChild(code);
@@ -59,7 +60,7 @@ async function loadCourse(title, jsonUrl) {
 
         summaryContainer.innerHTML = summaryHTML;
 
-        // Summary click scroll behavior
+        // Summary click scroll
         const summaryItems = summaryContainer.querySelectorAll(".list-group-item");
         summaryItems.forEach((item) => {
             item.addEventListener("click", () => {
@@ -73,17 +74,13 @@ async function loadCourse(title, jsonUrl) {
             });
         });
 
-        // Highlight summary on scroll
+        // Scroll highlight
         window.addEventListener("scroll", () => {
             let currentIndex = 0;
-            for (let i = 0; i < summaryItems.length; i++) {
-                const targetSelector = summaryItems[i].getAttribute("data-target");
-                const targetElement = document.querySelector(targetSelector);
-                if (targetElement) {
-                    const rect = targetElement.getBoundingClientRect();
-                    if (rect.top <= window.innerHeight / 3) currentIndex = i;
-                }
-            }
+            summaryItems.forEach((item, i) => {
+                const target = document.querySelector(item.getAttribute("data-target"));
+                if (target && target.getBoundingClientRect().top <= window.innerHeight / 3) currentIndex = i;
+            });
             summaryItems.forEach((item, idx) => item.classList.toggle("active", idx === currentIndex));
         });
 
