@@ -1,0 +1,156 @@
+{
+    "title": "Kubernetes Complete Cheat Sheet",
+    "modules": [
+      {
+        "title": "1. Cluster Basics",
+        "lessons": [
+          {
+            "title": "Check Cluster Info",
+            "note": "Get current cluster info and context.",
+            "code": "kubectl cluster-info\nkubectl config view\nkubectl config current-context"
+          },
+          {
+            "title": "View Nodes",
+            "note": "List all nodes and their status.",
+            "code": "kubectl get nodes\nkubectl describe node <node-name>"
+          }
+        ]
+      },
+      {
+        "title": "2. Pods",
+        "lessons": [
+          {
+            "title": "List Pods",
+            "note": "View all pods in the current namespace.",
+            "code": "kubectl get pods\nkubectl get pods -n <namespace>"
+          },
+          {
+            "title": "Describe Pod",
+            "note": "Detailed information about a pod.",
+            "code": "kubectl describe pod <pod-name>"
+          },
+          {
+            "title": "Create Pod",
+            "note": "Run a pod using a YAML file.",
+            "code": "kubectl apply -f pod.yaml"
+          },
+          {
+            "title": "Delete Pod",
+            "note": "Remove a pod.",
+            "code": "kubectl delete pod <pod-name>"
+          },
+          {
+            "title": "Pod Logs",
+            "note": "View logs from a pod container.",
+            "code": "kubectl logs <pod-name>\nkubectl logs -f <pod-name> -c <container-name>"
+          }
+        ]
+      },
+      {
+        "title": "3. Deployments",
+        "lessons": [
+          {
+            "title": "Create Deployment",
+            "note": "Run apps declaratively.",
+            "code": "kubectl apply -f deployment.yaml"
+          },
+          {
+            "title": "Scale Deployment",
+            "note": "Adjust replicas.",
+            "code": "kubectl scale deployment <name> --replicas=3"
+          },
+          {
+            "title": "Update Deployment",
+            "note": "Change image or config.",
+            "code": "kubectl set image deployment/<name> <container>=<image>:<tag>"
+          },
+          {
+            "title": "Rollback Deployment",
+            "note": "Revert to previous version.",
+            "code": "kubectl rollout undo deployment/<name>"
+          },
+          {
+            "title": "Check Deployment Status",
+            "note": "Verify deployment rollout.",
+            "code": "kubectl rollout status deployment/<name>"
+          }
+        ]
+      },
+      {
+        "title": "4. Services",
+        "lessons": [
+          {
+            "title": "List Services",
+            "note": "View services in the namespace.",
+            "code": "kubectl get svc\nkubectl get svc -n <namespace>"
+          },
+          {
+            "title": "Describe Service",
+            "note": "See details about a service.",
+            "code": "kubectl describe svc <service-name>"
+          },
+          {
+            "title": "Expose Deployment",
+            "note": "Create a service for deployment.",
+            "code": "kubectl expose deployment <name> --type=ClusterIP --port=80"
+          }
+        ]
+      },
+      {
+        "title": "5. Config & Secrets",
+        "lessons": [
+          {
+            "title": "ConfigMaps",
+            "note": "Store non-sensitive configuration data.",
+            "code": "kubectl create configmap <name> --from-literal=key=value\nkubectl get configmap\nkubectl describe configmap <name>"
+          },
+          {
+            "title": "Secrets",
+            "note": "Store sensitive information.",
+            "code": "kubectl create secret generic <name> --from-literal=password=1234\nkubectl get secret\nkubectl describe secret <name>"
+          }
+        ]
+      },
+      {
+        "title": "6. Namespaces",
+        "lessons": [
+          {
+            "title": "List Namespaces",
+            "note": "View all namespaces.",
+            "code": "kubectl get namespaces"
+          },
+          {
+            "title": "Switch Namespace",
+            "note": "Change current namespace context.",
+            "code": "kubectl config set-context --current --namespace=<namespace>"
+          }
+        ]
+      },
+      {
+        "title": "7. Miscellaneous Commands",
+        "lessons": [
+          {
+            "title": "Apply YAML",
+            "note": "Apply resources from a YAML file.",
+            "code": "kubectl apply -f <file>.yaml"
+          },
+          {
+            "title": "Delete Resource",
+            "note": "Delete any resource.",
+            "code": "kubectl delete -f <file>.yaml\nkubectl delete pod <name>"
+          },
+          {
+            "title": "Exec into Pod",
+            "note": "Run commands inside a pod.",
+            "code": "kubectl exec -it <pod-name> -- /bin/bash"
+          },
+          {
+            "title": "Port Forward",
+            "note": "Access pod/service locally.",
+            "code": "kubectl port-forward <pod-name> 8080:80"
+          }
+        ]
+      }
+    ]
+  }
+  
