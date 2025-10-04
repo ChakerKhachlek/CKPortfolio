@@ -32,6 +32,7 @@
     {
         "title": "MySQL",
         "percentage": 75,
+        "cheatSheetLink": "cheat-sheets/mysql.html",
         "img_logo": "assets/img/technology_logos/MySQL.png"
     },
     {
