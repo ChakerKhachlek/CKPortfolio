@@ -14,11 +14,6 @@ async function loadCourse(title, jsonUrl) {
         let summaryHTML = "";
 
         data.modules.forEach((module, moduleIndex) => {
-            const accordionId = `accordion-${moduleIndex}`;
-            const accordion = document.createElement("div");
-            accordion.className = "accordion mb-4";
-            accordion.id = accordionId;
-
             const sectionId = `section-${moduleIndex}`;
             const sectionTitle = document.createElement("h3");
             sectionTitle.className = "section-title";
@@ -26,35 +21,21 @@ async function loadCourse(title, jsonUrl) {
             sectionTitle.textContent = module.title;
             container.appendChild(sectionTitle);
 
+            // Add to summary
             summaryHTML += `<button class="list-group-item list-group-item-action" data-target="#${sectionId}">${module.title}</button>`;
 
             module.lessons.forEach((lesson, lessonIndex) => {
                 const itemId = `item-${moduleIndex}-${lessonIndex}`;
-                const accordionItem = document.createElement("div");
-                accordionItem.className = "accordion-item";
+                const card = document.createElement("div");
+                card.className = "accordion-item"; // keep the design style
 
+                // Lesson title
                 const header = document.createElement("h2");
                 header.className = "accordion-header";
-                header.id = `heading-${itemId}`;
+                header.textContent = lesson.title;
+                card.appendChild(header);
 
-                const button = document.createElement("button");
-                button.className = "accordion-button collapsed";
-                button.type = "button";
-                button.setAttribute("data-bs-toggle", "collapse");
-                button.setAttribute("data-bs-target", `#collapse-${itemId}`);
-                button.setAttribute("aria-expanded", "false");
-                button.setAttribute("aria-controls", `collapse-${itemId}`);
-                button.textContent = lesson.title;
-
-                header.appendChild(button);
-                accordionItem.appendChild(header);
-
-                const collapseDiv = document.createElement("div");
-                collapseDiv.id = `collapse-${itemId}`;
-                collapseDiv.className = "accordion-collapse collapse";
-                collapseDiv.setAttribute("aria-labelledby", `heading-${itemId}`);
-                collapseDiv.setAttribute("data-bs-parent", `#${accordionId}`);
-
+                // Lesson body (always visible)
                 const body = document.createElement("div");
                 body.className = "accordion-body";
 
@@ -64,23 +45,21 @@ async function loadCourse(title, jsonUrl) {
 
                 const pre = document.createElement("pre");
                 const code = document.createElement("code");
-                code.className = "language-bash";
+                code.className = "language-bash"; // you can adjust per course
                 code.textContent = lesson.code;
 
                 pre.appendChild(code);
                 body.appendChild(note);
                 body.appendChild(pre);
-                collapseDiv.appendChild(body);
-                accordionItem.appendChild(collapseDiv);
+                card.appendChild(body);
 
-                accordion.appendChild(accordionItem);
+                container.appendChild(card);
             });
-
-            container.appendChild(accordion);
         });
 
         summaryContainer.innerHTML = summaryHTML;
 
+        // Summary click scroll behavior
         const summaryItems = summaryContainer.querySelectorAll(".list-group-item");
         summaryItems.forEach((item) => {
             item.addEventListener("click", () => {
@@ -94,6 +73,7 @@ async function loadCourse(title, jsonUrl) {
             });
         });
 
+        // Highlight summary on scroll
         window.addEventListener("scroll", () => {
             let currentIndex = 0;
             for (let i = 0; i < summaryItems.length; i++) {
@@ -108,6 +88,7 @@ async function loadCourse(title, jsonUrl) {
         });
 
         Prism.highlightAll();
+
     } catch (error) {
         console.error("Failed to load course data:", error);
     }
