@@ -1,5 +1,25 @@
 [
   {
+    "title": "OpenPromptRegistry",
+    "img_link": "https://i.ibb.co/tp4C8w9B/image.png",
+    "description": "www.opregistry.com is a comprehensive platform for managing and sharing AI prompts. Features include prompt organization, versioning, and a collaborative environment for prompt engineers.",
+    "technologies": "Next.js, TypeScript, Bootstrap, Prisma, NextAuth.js",
+    "screenshots": [
+      "https://i.ibb.co/tp4C8w9B/image.png",
+      "https://i.ibb.co/5xJVVxxV/image.png",
+      "https://i.ibb.co/7x9WJX1t/image.png",
+      "https://i.ibb.co/gM4XnGwv/image.png",
+      "https://i.ibb.co/hFHcFm7r/image.png",
+      "https://i.ibb.co/gL6zZf5Z/image.png",
+      "https://i.ibb.co/d08qn3rQ/image.png",
+      "https://i.ibb.co/BH3M8Vcj/image.png",
+      "https://i.ibb.co/Cpgd1Hb4/image.png",
+      "https://i.ibb.co/5gSm4mn7/image.png",
+      "https://i.ibb.co/Tx3nKwW7/image.png",
+      "https://i.ibb.co/h1FPBySk/image.png"
+    ]
+  },
+  {
     "title": "QCM Generator",
     "img_link": "https://i.ibb.co/18b8mzj/2.png",
     "description": "The 'QCM Generator' is a React-based school project that uses the GPT-3.5 Turbo model to instantly create single-choice questions (SCQs) from user input. It streamlines exam preparation for students and provides teachers with a convenient assessment tool.",
