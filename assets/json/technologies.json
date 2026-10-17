@@ -1,127 +1,150 @@
 [
-    {
-        "title": "React",
-        "percentage": 80,
-        "img_logo": "assets/img/technology_logos/React.png"
-    },
-    {
-        "title": "Laravel",
-        "percentage": 85,
-        "img_logo": "assets/img/technology_logos/Laravel.png"
-    },
-    {
-        "title": "Symfony",
-        "percentage": 80,
-        "img_logo": "assets/img/technology_logos/Symfony.png"
-    },
-    {
-        "title": "Express",
-        "percentage": 75,
-        "img_logo": "assets/img/technology_logos/Express.png"
-    },
-    {
-        "title": "Spring",
-        "percentage": 60,
-        "img_logo": "assets/img/technology_logos/Spring.png"
-    },
-    {
-        "title": "Django",
-        "percentage": 60,
-        "img_logo": "assets/img/technology_logos/Django.png"
-    },
-    {
-        "title": "MySQL",
-        "percentage": 75,
-        "cheatSheetLink": "cheat-sheets/mysql.html",
-        "img_logo": "assets/img/technology_logos/MySQL.png"
-    },
-    {
-        "title": "PostgreSQL",
-        "percentage": 75,
-        "img_logo": "assets/img/technology_logos/PostgreSQL.png"
-    },
-    {
-        "title": "MongoDB",
-        "percentage": 75,
-        "img_logo": "assets/img/technology_logos/MongoDB.png"
-    },
-    {
-        "title": "Git",
-        "percentage": 75,
-        "img_logo": "assets/img/technology_logos/Git.png"
-    },
-    {
-        "title": "Github",
-        "percentage": 75,
-        "img_logo": "assets/img/technology_logos/Github.png"
-    },
-    {
-        "title": "Docker",
-        "percentage": 75,
-        "cheatSheetLink": "cheat-sheets/docker.html",
-        "img_logo": "assets/img/technology_logos/Docker.png"
-    },
-    {
-        "title": "JavaScript",
-        "percentage": 75,
-        "img_logo": "assets/img/technology_logos/JavaScript.png"
-    },
-    {
-        "title": "Java",
-        "percentage": 75,
-        "img_logo": "assets/img/technology_logos/Java.png"
-    },
-    {
-        "title": "PHP",
-        "cheatSheetLink": "cheat-sheets/php.html",
-        "percentage": 75,
-        "img_logo": "assets/img/technology_logos/PHP.png"
-    },
-    {
-        "title": "Python",
-        "percentage": 75,
-        "img_logo": "assets/img/technology_logos/Python.png"
-    },
-    {
-        "title": "NetBeans",
-        "percentage": 75,
-        "img_logo": "assets/img/technology_logos/NetBeans.png"
-    },
-    {
-        "title": "Android",
-        "percentage": 75,
-        "img_logo": "assets/img/technology_logos/Android.png"
-    },
-    {
-        "title": "Flutter",
-        "percentage": 65,
-        "img_logo": "assets/img/technology_logos/Flutter.png"
-    },
-    {
-        "title": "VS Code",
-        "percentage": 90,
-        "img_logo": "assets/img/technology_logos/VSCode.png"
-    },
-    {
-        "title": "IntelliJ",
-        "percentage": 80,
-        "img_logo": "assets/img/technology_logos/IntelliJ.png"
-    },
-    {
-        "title": "Android Studio",
-        "percentage": 75,
-        "img_logo": "assets/img/technology_logos/Android Studio.png"
-    },
-    {
-        "title": "Talend",
-        "percentage": 50,
-        "img_logo": "assets/img/technology_logos/Talend.png"
-    }
-    ,
-    {
-        "title": "Kubernetes",
-        "percentage": 75,
-        "cheatSheetLink": "cheat-sheets/kubernetes.html",
-        "img_logo": "assets/img/technology_logos/kubernetes.png"
-    }
+  {
+    "title": "Laravel",
+    "percentage": 85,
+    "img_logo": "assets/img/technology_logos/Laravel.png",
+    "category": "Backend"
+  },
+  {
+    "title": "Symfony",
+    "percentage": 80,
+    "img_logo": "assets/img/technology_logos/Symfony.png",
+    "category": "Backend"
+  },
+  {
+    "title": "Express",
+    "percentage": 75,
+    "img_logo": "assets/img/technology_logos/Express.png",
+    "category": "Backend"
+  },
+  {
+    "title": "Java",
+    "percentage": 75,
+    "img_logo": "assets/img/technology_logos/Java.png",
+    "category": "Backend"
+  },
+  {
+    "title": "PHP",
+    "cheatSheetLink": "cheat-sheets/php.html",
+    "percentage": 75,
+    "img_logo": "assets/img/technology_logos/PHP.png",
+    "category": "Backend"
+  },
+  {
+    "title": "Python",
+    "percentage": 75,
+    "img_logo": "assets/img/technology_logos/Python.png",
+    "category": "Backend"
+  },
+  {
+    "title": "Spring",
+    "percentage": 60,
+    "img_logo": "assets/img/technology_logos/Spring.png",
+    "category": "Backend"
+  },
+  {
+    "title": "Django",
+    "percentage": 60,
+    "img_logo": "assets/img/technology_logos/Django.png",
+    "category": "Backend"
+  },
+  {
+    "title": "React",
+    "percentage": 80,
+    "img_logo": "assets/img/technology_logos/React.png",
+    "category": "Frontend"
+  },
+  {
+    "title": "JavaScript",
+    "percentage": 75,
+    "img_logo": "assets/img/technology_logos/JavaScript.png",
+    "category": "Frontend"
+  },
+  {
+    "title": "MySQL",
+    "percentage": 75,
+    "cheatSheetLink": "cheat-sheets/mysql.html",
+    "img_logo": "assets/img/technology_logos/MySQL.png",
+    "category": "Databases"
+  },
+  {
+    "title": "PostgreSQL",
+    "percentage": 75,
+    "img_logo": "assets/img/technology_logos/PostgreSQL.png",
+    "category": "Databases"
+  },
+  {
+    "title": "MongoDB",
+    "percentage": 75,
+    "img_logo": "assets/img/technology_logos/MongoDB.png",
+    "category": "Databases"
+  },
+  {
+    "title": "Talend",
+    "percentage": 50,
+    "img_logo": "assets/img/technology_logos/Talend.png",
+    "category": "Databases"
+  },
+  {
+    "title": "VS Code",
+    "percentage": 90,
+    "img_logo": "assets/img/technology_logos/VSCode.png",
+    "category": "DevOps & tools"
+  },
+  {
+    "title": "IntelliJ",
+    "percentage": 80,
+    "img_logo": "assets/img/technology_logos/IntelliJ.png",
+    "category": "DevOps & tools"
+  },
+  {
+    "title": "Git",
+    "percentage": 75,
+    "img_logo": "assets/img/technology_logos/Git.png",
+    "category": "DevOps & tools"
+  },
+  {
+    "title": "Github",
+    "percentage": 75,
+    "img_logo": "assets/img/technology_logos/Github.png",
+    "category": "DevOps & tools"
+  },
+  {
+    "title": "Docker",
+    "percentage": 75,
+    "cheatSheetLink": "cheat-sheets/docker.html",
+    "img_logo": "assets/img/technology_logos/Docker.png",
+    "category": "DevOps & tools"
+  },
+  {
+    "title": "NetBeans",
+    "percentage": 75,
+    "img_logo": "assets/img/technology_logos/NetBeans.png",
+    "category": "DevOps & tools"
+  },
+  {
+    "title": "Android Studio",
+    "percentage": 75,
+    "img_logo": "assets/img/technology_logos/Android Studio.png",
+    "category": "DevOps & tools"
+  },
+  {
+    "title": "Kubernetes",
+    "percentage": 75,
+    "cheatSheetLink": "cheat-sheets/kubernetes.html",
+    "img_logo": "assets/img/technology_logos/kubernetes.png",
+    "category": "DevOps & tools"
+  },
+  {
+    "title": "Android",
+    "percentage": 75,
+    "img_logo": "assets/img/technology_logos/Android.png",
+    "category": "Mobile"
+  },
+  {
+    "title": "Flutter",
+    "percentage": 65,
+    "img_logo": "assets/img/technology_logos/Flutter.png",
+    "category": "Mobile"
+  }
 ]

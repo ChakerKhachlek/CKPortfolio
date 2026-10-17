@@ -119,23 +119,30 @@
                 </div>
                 <div class="col"></div>
             </div>
-            <div class="row">
-                <div class="col">
-                    <blockquote class="blockquote-sm text-center text-light">
-                        &ldquo; I'm a computer engineer specialised in web technologies, working as a web developer at
-                        SQLI in Paris on PHP, Symfony, Ibexa and Shopware projects, with AI agents built into how I
-                        deliver. On the side I ship my own products: Loasis, a real-time multiplayer café game playable
-                        in the browser, and Open Prompt Registry, a platform for managing AI prompts. &rdquo;
-                    </blockquote>
+            <div class="about-grid">
+                <div class="about-photo">
+                    <img src="assets/img/photo_portfolio.png" alt="Chaker Khachlek" loading="lazy">
+                    <span class="about-status"><i></i> Based in Paris</span>
                 </div>
-            </div>
-            <div class="row text-center mt-2">
-                <p class="cv-links">
-                    Download CV:
-                    <a href="assets/pdf/chaker_khachlek_cv_eng.pdf" download>English</a> ·
-                    <a href="assets/pdf/chaker_khachlek_cv_fr.pdf" download>Français</a> ·
-                    <a href="cv.html">Interactive</a>
-                </p>
+                <div class="about-content">
+                    <p class="about-lead">Computer engineer specialised in web technologies.</p>
+                    <p class="about-text">
+                        I work as a web developer at SQLI in Paris on PHP, Symfony, Ibexa and Shopware projects, with
+                        AI agents built into how I deliver. On the side I ship my own products: Loasis, a real-time
+                        multiplayer café game playable in the browser, and Open Prompt Registry, a platform for
+                        managing AI prompts.
+                    </p>
+                    <div class="about-stats">
+                        <div><strong>6+</strong><span>years building for the web</span></div>
+                        <div><strong>3,500+</strong><span>participants accredited on a platform I built</span></div>
+                        <div><strong>2</strong><span>live products I built and run</span></div>
+                    </div>
+                    <div class="about-actions">
+                        <a class="hero-btn hero-btn-primary" href="cv.html">View CV</a>
+                        <a class="hero-btn" href="assets/pdf/chaker_khachlek_cv_eng.pdf" download>Download (EN)</a>
+                        <a class="hero-btn" href="assets/pdf/chaker_khachlek_cv_fr.pdf" download>Télécharger (FR)</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -166,29 +173,34 @@
                 figure out. &rdquo;
             </blockquote>
 
-            <div class="mb-5" x-data="{ technologies: [] }" x-init="fetch('https://chakerkhachlek.github.io/CKPortfolio/assets/json/technologies.json')
+            <div class="mb-3" x-data="{ technologies: [], filter: 'All' }" x-init="fetch('https://chakerkhachlek.github.io/CKPortfolio/assets/json/technologies.json')
        .then(response => response.json())
        .then(data => technologies = data)">
-                <div x-show="technologies.length > 0" class="row justify-content-center gy-4">
-                    <template x-for="technology in technologies" :key="technology.title">
-                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div class="technology-card">
-                                <div class="tech-logo">
-                                    <img :src="technology.img_logo" :alt="technology.title + ' logo'">
+                <div class="tech-filters" role="tablist" aria-label="Filter technologies" x-show="technologies.length > 0">
+                    <template x-for="cat in ['All', ...new Set(technologies.map(t => t.category))]" :key="cat">
+                        <button type="button" role="tab" :aria-selected="filter === cat"
+                            :class="{ active: filter === cat }" @click="filter = cat" x-text="cat"></button>
+                    </template>
+                </div>
+                <div class="tech-grid">
+                    <template x-for="technology in technologies.filter(t => filter === 'All' || t.category === filter)"
+                        :key="technology.title">
+                        <div class="tech-card">
+                            <div class="tech-card-logo">
+                                <img :src="technology.img_logo" :alt="technology.title + ' logo'" loading="lazy">
+                            </div>
+                            <div class="tech-card-info">
+                                <div class="tech-card-head">
+                                    <span class="tech-card-title" x-text="technology.title"></span>
+                                    <span class="tech-card-pct" x-text="technology.percentage + '%'"></span>
                                 </div>
-                                <div class="tech-info">
-                                    <div class="tech-title" x-text="technology.title"></div>
-                                    <div class="percentage-bar-container" :title="technology.percentage + '%'">
-                                        <div class="percentage-bar" :style="'width:' + technology.percentage + '%'">
-                                            <span x-text="technology.percentage + '%'"></span>
-                                        </div>
-                                    </div>
-                                    <template x-if="technology.cheatSheetLink">
-                                        <a :href="technology.cheatSheetLink" target="_blank" class="btn btn-cheatsheet">
-                                            View Cheatsheet
-                                        </a>
-                                    </template>
+                                <div class="tech-card-bar" role="meter" aria-valuemin="0" aria-valuemax="100"
+                                    :aria-valuenow="technology.percentage" :aria-label="technology.title + ' proficiency'">
+                                    <i :style="'width:' + technology.percentage + '%'"></i>
                                 </div>
+                                <template x-if="technology.cheatSheetLink">
+                                    <a class="tech-card-link" :href="technology.cheatSheetLink" target="_blank">Cheat sheet ↗</a>
+                                </template>
                             </div>
                         </div>
                     </template>
