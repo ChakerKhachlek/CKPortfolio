@@ -1,6 +1,7 @@
 [
   {
     "title": "Loasis (Oasis Plaza)",
+    "date": "2026",
     "img_link": "https://i.ibb.co/F47KWtpW/game1.png",
     "description": "Loasis is a 100% solo-developed 2D interactive virtual café playable directly in the browser on PC, tablet and mobile, with no downloads required. Players walk around the café, pick a table, customize their avatar and play classic games together: Chkobba (the traditional Tunisian card game), Dame (Checkers), Chess and Ludo. It features table-side voice chat, global text chat and a soundboard, a friends system with online presence, and AI bots to fill empty seats. Under the hood it runs on a custom engine built with AI as an engineering multiplier, including in-game map and decoration editors, and a self-hosted real-time stack: a LiveKit server for voice alongside a custom WebSocket server for game events, deployed on a dedicated VPC with full security handling.",
     "technologies": "Custom 2D Web Game Engine, WebSockets, LiveKit (self-hosted), WebRTC Voice Chat, Game AI Bots, Map & Decoration Editors, VPC Deployment",
@@ -10,8 +11,8 @@
         "url": "https://www.playloasis.com"
       },
       {
-        "label": "Press coverage",
-        "url": "https://lnkd.in/e8iFHnpf"
+        "label": "Press coverage (TGTV)",
+        "url": "https://tgtv.tn/tunisian-game/oasis-plaza/"
       }
     ],
     "screenshots": [
@@ -36,9 +37,16 @@
   },
   {
     "title": "OpenPromptRegistry",
+    "date": "May 2025",
     "img_link": "https://i.ibb.co/Tx3nKwW7/image.png",
     "description": "www.opregistry.com is a comprehensive platform for managing and sharing AI prompts. Features include prompt organization, versioning, and a collaborative environment for prompt engineers.",
     "technologies": "Next.js, TypeScript, Bootstrap, Prisma, NextAuth.js",
+    "links": [
+      {
+        "label": "Visit opregistry.com",
+        "url": "https://www.opregistry.com"
+      }
+    ],
     "screenshots": [
       "https://i.ibb.co/tp4C8w9B/image.png",
       "https://i.ibb.co/5xJVVxxV/image.png",
@@ -56,6 +64,7 @@
   },
   {
     "title": "QCM Generator",
+    "date": "2023",
     "img_link": "https://i.ibb.co/18b8mzj/2.png",
     "description": "The 'QCM Generator' is a React-based school project that uses the GPT-3.5 Turbo model to instantly create single-choice questions (SCQs) from user input. It streamlines exam preparation for students and provides teachers with a convenient assessment tool.",
     "technologies": "React, GPT3, GPT3-Turbo Model, Text To Json Parsing",
@@ -70,6 +79,7 @@
   },
   {
     "title": "CS GO Market Analysis",
+    "date": "2023 - 2024",
     "img_link": "https://i.ibb.co/K71zc6v/web3.png",
     "description": "The objective of this project is to apply data analysis techniques to understand trends in the CS:GO skins market. This could involve examining price fluctuations, identifying the most popular skins, analyzing rarity, and other aspects relevant to players, collectors, and investors involved in the skins market.",
     "technologies": "Talend, ETL, Power BI, React",
@@ -85,6 +95,7 @@
   },
   {
     "title": "Accreditation platform",
+    "date": "Apr. 2023 - Jul. 2023",
     "img_link": "https://i.ibb.co/CbzqMqS/Screenshot-1.jpg",
     "description": "The implementation of an accreditation system played a crucial role in accrediting over 3500 participants from 54 African countries, significantly contributing to the success of the African Beach Games held in Hammamet. The participant registration process, spanning preliminary stages, long lists, short lists, arrivals, and departures, was meticulously executed. A pre-accreditation process, akin to obtaining a visa, was established for participants, ensuring a seamless entry experience. The system facilitated the generation of distinct printable badges for each participant based on their role. Additionally, it offered a comprehensive overview of all participants, equipped with export tools for efficient data management. This accreditation system not only streamlined participant logistics but also played a pivotal role in enhancing the overall organizational success of the event.",
     "technologies": "React , Express, Node JS, MongoDB, Digital Ocean, Websockets, JWT",
@@ -106,6 +117,7 @@
   },
   {
     "title": "Ecowarriors",
+    "date": "Jan. 2023 - Jun. 2023",
     "img_link": "https://i.ibb.co/9H8R6dG/stou-water-nature-clan-image-no-text-only-logo-color-1e90ff-979c121b-cbb3-4d78-8009-47de84ebca37.png",
     "description": "The platform presents a gamified experience, introducing an innovative approach that seamlessly integrates social networks, gaming, and education, all while fostering environmental preservation and sustainable development. A module validates real-life quests completed by players, allowing the upload of videos or images as proof. The platform employs AI to generate avatars using the stable broadcast API. A dynamic system of experience points and rewards adapts based on the player's level, creating a personalized and evolving journey. Complementing this, a real-time chat module and notifications enhance user engagement. Furthermore, the platform introduces collectible cards, offering a tangible and rewarding aspect to the gaming experience. Players can level up, achieving milestone badges that unlock unique rewards, creating an immersive and motivating ecosystem for users.",
     "technologies": "React , Express, Node JS, MongoDB, Digital Ocean, Websockets, JWT",
@@ -135,6 +147,7 @@
   },
   {
     "title": "Online heaven platform",
+    "date": "2020",
     "img_link": "https://i.ibb.co/D4HXW0B/screencapture-localhost-8000-2020-12-30-18-10-33.png",
     "description": "Online Heaven Platform represents a solution for the broadcasting of animated series, the sharing of publications, and the collection of information about video games. This platform is the answer to the needs of the community.",
     "technologies": "Symfony, RAWG api, Angular 8, Heroku web apps, Bootstrap 4",
@@ -152,6 +165,7 @@
   },
   {
     "title": "Mobile streaming app",
+    "date": "2020",
     "img_link": "https://i.ibb.co/4KC8CdJ/133982795-387737119195967-6724531398676094254-n-Copy.jpg",
     "description": "This a school project, a mobile application accessible from devices under the Android operating system, mainly used for watching anime movies.",
     "technologies": "Java, Native android, Laravel backend, Restful Api's, Microsoft Azure, Android Studio IDE",
@@ -170,6 +184,7 @@
   },
   {
     "title": "Greenex ERP",
+    "date": "Jan. 2021 - Jun. 2021",
     "img_link": "https://i.ibb.co/r3Tfb9F/Dashboard.png",
     "description": "My end of bachelor project, a web application coded with Laravel and Livewire Framework, the purpose of this app is to help the company to manage its orders, clients, workforces, and invoices.",
     "technologies": "Laravel, Livewire Framework, Bootstrap 4, Heroku web apps,Chart JS, MVC Architecture",
@@ -190,6 +205,7 @@
   },
   {
     "title": "Spirit of life",
+    "date": "2021",
     "img_link": "https://i.ibb.co/z6Rxcv4/spirit-of-life-head.png",
     "description": "Spirit of Life is a dynamic web application meticulously crafted with Laravel and Laravel Livewire, designed specifically for association needs. This bespoke digital solution encapsulates a seamless blend of cutting-edge technology and purposeful design, empowering associations with a robust online presence and intuitive functionality.",
     "technologies": "Laravel, Livewire Framework, Bootstrap 4, Heroku web apps, MVC Architecture",
@@ -202,6 +218,7 @@
   },
   {
     "title": "Vr help",
+    "date": "2022",
     "img_link": "https://i.ibb.co/x7WjzRQ/making-off2.png",
     "description": "A school project, 3D virtual reality application for the purpose of helping people to express their feelings and emotions in a virtual world.",
     "technologies": "Unity 3D, Vr Chat, C#",
@@ -221,6 +238,7 @@
   },
   {
     "title": "Social network app",
+    "date": "2022",
     "img_link": "https://i.ibb.co/Mf1vjpM/login.png",
     "description": "A school project, android app coded with Java and Codenameone framework, the purpose of this app is to help people to connect with each other and share their feelings and emotions.",
     "technologies": "Java, Codenameone framework, Restful Api's, Netbeans IDE",
@@ -242,6 +260,7 @@
   },
   {
     "title": "BMI calculator",
+    "date": "2020",
     "img_link": "https://i.ibb.co/j68w1q0/bmihead.jpg",
     "description": "A personal project, mobile app coded with Dart and Fultter Framework, the purpose of this app is to calculate the body mass index of a person.",
     "technologies": "Dart, Flutter Framework, Android Studio IDE",

@@ -103,6 +103,10 @@
                             d="M8 0a5.53 5.53 0 0 0-3.594 1.342c-.766.66-1.321 1.52-1.464 2.383C1.266 4.095 0 5.555 0 7.318 0 9.366 1.708 11 3.781 11H7.5V5.5a.5.5 0 0 1 1 0V11h4.188C14.502 11 16 9.57 16 7.773c0-1.636-1.242-2.969-2.834-3.194C12.923 1.999 10.69 0 8 0zm-.354 15.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 14.293V11h-1v3.293l-2.146-2.147a.5.5 0 0 0-.708.708l3 3z" />
                     </svg></a>
             </div>
+            <div class="row text-center mt-2">
+                <a class="text-light" href="cv.html" style="font-family: 'Fira Code', monospace; font-size: 0.85rem;">&gt; view interactive CV</a>
+                <a class="text-light" href="cv-ats.html" style="font-family: 'Fira Code', monospace; font-size: 0.85rem;">&gt; ATS-friendly CV</a>
+            </div>
 
         </div>
     </div>
@@ -257,6 +261,8 @@
                                     <h4 class="text-dark text-center mt-2"
                                         style="font-family: 'Fira Code', monospace; font-size: 1.2rem; font-weight: bold; padding: 10px; background-color: white; border-radius: 50%;"
                                         x-text="project.title"></h4>
+                                    <p class="text-dark text-center mb-2" style="font-family: 'Fira Code', monospace; font-size: 0.9rem;"
+                                        x-show="project.date" x-text="project.date"></p>
                                 </div>
                             </div>
                         </template>
@@ -277,6 +283,8 @@
                                 <div class="container">
                                     <div class="row text-light">
                                         <div class="col-md-12">
+                                            <p x-show="currentProject && currentProject.date"><strong>Date:</strong> <span
+                                                    x-text="currentProject ? currentProject.date : ''"></span></p>
                                             <p class="" x-text="currentProject ? currentProject.description : ''"></p>
                                             <p><strong>Technologies:</strong> <span
                                                     class="badge ml-3 bg-light text-dark "
