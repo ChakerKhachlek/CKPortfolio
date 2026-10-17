@@ -11,10 +11,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chaker Khachlek — CV</title>
     <link rel="icon" href="assets/img/logo.jpeg" type="image/png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
+        /* Static (non-variable) fonts so PDF exports embed TrueType, which ATS parsers read reliably. */
+        @font-face { font-family: 'Inter'; font-weight: 400; font-display: swap; src: url('assets/fonts/Inter-400.woff') format('woff'); }
+        @font-face { font-family: 'Inter'; font-weight: 500; font-display: swap; src: url('assets/fonts/Inter-500.woff') format('woff'); }
+        @font-face { font-family: 'Inter'; font-weight: 600; font-display: swap; src: url('assets/fonts/Inter-600.woff') format('woff'); }
+        @font-face { font-family: 'Inter'; font-weight: 700; font-display: swap; src: url('assets/fonts/Inter-700.woff') format('woff'); }
+        @font-face { font-family: 'Inter'; font-weight: 800; font-display: swap; src: url('assets/fonts/Inter-800.woff') format('woff'); }
+        @font-face { font-family: 'Fira Code'; font-weight: 400; font-display: swap; src: url('assets/fonts/FiraCode-400.woff') format('woff'); }
+        @font-face { font-family: 'Fira Code'; font-weight: 500; font-display: swap; src: url('assets/fonts/FiraCode-500.woff') format('woff'); }
+        @font-face { font-family: 'Fira Code'; font-weight: 600; font-display: swap; src: url('assets/fonts/FiraCode-600.woff') format('woff'); }
+
         :root {
             --ink: #16181d;
             --muted: #5b6270;
@@ -238,6 +245,7 @@
 <body>
     <nav class="toolbar" aria-label="CV options">
         <a href="index.html">← portfolio</a>
+        <a href="cv-ats.html"><span class="en">ATS version</span><span class="fr">Version ATS</span></a>
         <button type="button" data-set-lang="en">EN</button>
         <button type="button" data-set-lang="fr">FR</button>
         <button type="button" onclick="window.print()">
@@ -259,7 +267,7 @@
                 </div>
                 <div class="contacts">
                     <a href="mailto:chaker.khachlek@gmail.com"><em>@</em> chaker.khachlek@gmail.com</a>
-                    <a href="tel:+33765702852"><em>☏</em> 07 657 028 52</a>
+                    <a href="tel:+33765702852"><em>☏</em> +33 7 65 70 28 52</a>
                     <a href="https://www.linkedin.com/in/chaker-khachlek/"><em>in</em> /in/chaker-khachlek</a>
                     <a href="https://github.com/ChakerKhachlek"><em>gh</em> github.com/ChakerKhachlek</a>
                     <a href="https://chakerkhachlek.github.io/CKPortfolio/"><em>↗</em> <span class="en">Portfolio</span><span class="fr">Portfolio</span></a>
@@ -329,7 +337,7 @@
                     <div class="item">
                         <div class="item-head">
                             <h3>EcoWarriors <small class="en">· academic project</small><small class="fr">· projet académique</small></h3>
-                            <span class="date"><span class="en">Jan. – Jun. 2023</span><span class="fr">Jan. – Juin 2023</span></span>
+                            <span class="date"><span class="en">Jan 2023 – Jun 2023</span><span class="fr">Jan. 2023 – Juin 2023</span></span>
                         </div>
                         <ul>
                             <li class="en">Gamified platform blending social network and education to promote sustainable development. <b>Awarded “Best Project”.</b></li>
@@ -345,7 +353,7 @@
                     <div class="item">
                         <div class="item-head">
                             <h3>SQLI <small class="en">· Web Developer (permanent)</small><small class="fr">· Développeur Concepteur Web (CDI)</small></h3>
-                            <span class="date"><span class="en">Oct. 2024 – Present</span><span class="fr">Oct. 2024 – Présent</span></span>
+                            <span class="date"><span class="en">Oct 2024 – Present</span><span class="fr">Oct. 2024 – Présent</span></span>
                         </div>
                         <p class="meta">Paris, France</p>
                         <ul>
@@ -357,7 +365,7 @@
                     <div class="item">
                         <div class="item-head">
                             <h3>SQLI <small class="en">· Web Developer (internship)</small><small class="fr">· Développeur Concepteur Web (stage)</small></h3>
-                            <span class="date"><span class="en">Feb. – Aug. 2024</span><span class="fr">Fév. – Août 2024</span></span>
+                            <span class="date"><span class="en">Feb 2024 – Aug 2024</span><span class="fr">Fév. 2024 – Août 2024</span></span>
                         </div>
                         <p class="meta">Paris, France</p>
                         <ul>
@@ -371,7 +379,7 @@
                     <div class="item">
                         <div class="item-head">
                             <h3><span class="en">Tunisian National Olympic Committee</span><span class="fr">Comité National Olympique Tunisien</span> <small>· MERN</small></h3>
-                            <span class="date"><span class="en">Apr. – Jul. 2023</span><span class="fr">Avr. – Juil. 2023</span></span>
+                            <span class="date"><span class="en">Apr 2023 – Jul 2023</span><span class="fr">Avr. 2023 – Juil. 2023</span></span>
                         </div>
                         <ul>
                             <li class="en">Delivered the mission-critical accreditation system for the African Beach Games: 3,500+ participants from 54 countries.</li>
@@ -382,7 +390,7 @@
                     <div class="item">
                         <div class="item-head">
                             <h3>Carolina Tunisian Group <small>· Laravel</small></h3>
-                            <span class="date"><span class="en">Jul. – Sep. 2022</span><span class="fr">Juil. – Sep. 2022</span></span>
+                            <span class="date"><span class="en">Jul 2022 – Sep 2022</span><span class="fr">Juil. 2022 – Sep. 2022</span></span>
                         </div>
                         <ul>
                             <li class="en">Designed and built a high-traffic e-commerce platform end to end, optimising the purchase journey.</li>
@@ -393,7 +401,7 @@
                     <div class="item">
                         <div class="item-head">
                             <h3>Greenex <small>· Laravel</small></h3>
-                            <span class="date"><span class="en">Jan. – Jun. 2021</span><span class="fr">Jan. – Juin 2021</span></span>
+                            <span class="date"><span class="en">Jan 2021 – Jun 2021</span><span class="fr">Jan. 2021 – Juin 2021</span></span>
                         </div>
                         <ul>
                             <li class="en">ERP automating production-data entry, making the company's management tool faster and more flexible.</li>
@@ -404,7 +412,7 @@
                     <div class="item">
                         <div class="item-head">
                             <h3>Tunisair <small>· PHP</small></h3>
-                            <span class="date"><span class="en">Jan. – Feb. 2020</span><span class="fr">Jan. – Fév. 2020</span></span>
+                            <span class="date"><span class="en">Jan 2020 – Feb 2020</span><span class="fr">Jan. 2020 – Fév. 2020</span></span>
                         </div>
                         <ul>
                             <li class="en">Statistics tool extracting and analysing data from complex B2B booking XML feeds.</li>
@@ -459,13 +467,8 @@
                 </section>
 
                 <section>
-                    <h2><span class="en">Path</span><span class="fr">Parcours</span></h2>
+                    <h2><span class="en">Education</span><span class="fr">Formation</span></h2>
                     <ol class="timeline">
-                        <li class="now">
-                            <span class="yr">2024 → <span class="en">now</span><span class="fr">auj.</span></span>
-                            <b>SQLI · Paris</b>
-                            <small class="en">Intern, then permanent web developer</small><small class="fr">Stagiaire, puis développeur en CDI</small>
-                        </li>
                         <li>
                             <span class="yr">2023 – 2024</span>
                             <b>ESEO · Vélizy</b>
