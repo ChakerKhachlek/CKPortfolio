@@ -30,7 +30,7 @@
     <!-- Include jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <!-- Include Ripples.js -->
-    <script src="https://cdn.rawgit.com/sirxemic/jquery.ripples/master/dist/jquery.ripples-min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery.ripples@0.6.3/dist/jquery.ripples-min.js"></script>
     <!-- Include Alpine.js -->
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.2/dist/cdn.min.js"></script>
 </head>
@@ -85,29 +85,17 @@
 
     <!-- Main Section Start -->
     <div id="particles-js" style="position: relative">
-        <div class="position-absolute top-50 start-50 translate-middle">
-            <div class="row">
-                <div class="col">
-                    <img class="rounded mx-auto d-block" width="40px" src="assets/img/logo.jpeg" alt="My picture">
-                </div>
+        <div class="hero position-absolute top-50 start-50 translate-middle">
+            <p class="hero-prompt">chaker@paris:~$ whoami</p>
+            <h1 class="hero-name">Chaker Khachlek<span>.</span></h1>
+            <p class="hero-role">Backend Software Engineer · Web Developer</p>
+            <p class="hero-intro">I build web platforms at SQLI in Paris, and ship my own products on the side.</p>
+            <div class="hero-actions">
+                <a class="hero-btn hero-btn-primary" href="https://www.playloasis.com" target="_blank" rel="noopener">Play Loasis</a>
+                <a class="hero-btn" href="cv.html">View CV</a>
+                <a class="hero-btn" href="#contact">Contact</a>
             </div>
-            <div class="row text-center mt-2">
-                <div class="text-light">CHAKER KHACHLEK</div>
-            </div>
-            <div class="row text-center mt-2">
-                <a class="text-light " href="assets/pdf/chaker_khachlek_cv_eng.pdf"
-                    download="assets/pdf/chaker_khachlek_cv_eng.pdf" target="_blank">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                        class="bi bi-cloud-download-fill" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd"
-                            d="M8 0a5.53 5.53 0 0 0-3.594 1.342c-.766.66-1.321 1.52-1.464 2.383C1.266 4.095 0 5.555 0 7.318 0 9.366 1.708 11 3.781 11H7.5V5.5a.5.5 0 0 1 1 0V11h4.188C14.502 11 16 9.57 16 7.773c0-1.636-1.242-2.969-2.834-3.194C12.923 1.999 10.69 0 8 0zm-.354 15.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 14.293V11h-1v3.293l-2.146-2.147a.5.5 0 0 0-.708.708l3 3z" />
-                    </svg></a>
-            </div>
-            <div class="row text-center mt-2">
-                <a class="text-light" href="cv.html" style="font-family: 'Fira Code', monospace; font-size: 0.85rem;">&gt; view interactive CV</a>
-                <a class="text-light" href="cv-ats.html" style="font-family: 'Fira Code', monospace; font-size: 0.85rem;">&gt; ATS-friendly CV</a>
-            </div>
-
+            <p class="hero-small"><a href="cv-ats.html">ATS-friendly CV</a></p>
         </div>
     </div>
     <!-- Main Section End -->
@@ -115,7 +103,7 @@
     <div class="section-separator"></div>
 
     <!-- About Section Start -->
-    <div class="section min-vh-100 d-flex align-items-center" id="about">
+    <div class="section d-flex align-items-center" id="about">
         <div class="polygons"></div>
         <div class="container">
             <div class="row d-flex align-items-center justify-content-center text-nowrap text-center text-light mb-5">
@@ -135,24 +123,20 @@
             <div class="row">
                 <div class="col">
                     <blockquote class="blockquote-sm text-center text-light">
-                        &ldquo; I am a computer engineer specialized in web technologies with a bachelor's degree in
-                        information systems development.
-                        As a passionate web developer, I am constantly driven by new challenges. My commitment to
-                        continuous learning keeps me up-to-date with the latest industry trends, empowering me to offer
-                        innovative solutions in web development. &rdquo;
+                        &ldquo; I'm a computer engineer specialised in web technologies, working as a web developer at
+                        SQLI in Paris on PHP, Symfony, Ibexa and Shopware projects, with AI agents built into how I
+                        deliver. On the side I ship my own products: Loasis, a real-time multiplayer café game playable
+                        in the browser, and Open Prompt Registry, a platform for managing AI prompts. &rdquo;
                     </blockquote>
                 </div>
             </div>
             <div class="row text-center mt-2">
-                <a style="z-index: 1000;" class="text-light text-decoration-none zindex-tooltip"
-                    href="assets/pdf/chaker_khachlek_cv_fr.pdf" download="assets/pdf/chaker_khachlek_cv_fr.pdf">
-                    Detailed French Curriculum
-                    Vitae
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                        class="bi bi-cloud-download-fill" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd"
-                            d="M8 0a5.53 5.53 0 0 0-3.594 1.342c-.766.66-1.321 1.52-1.464 2.383C1.266 4.095 0 5.555 0 7.318 0 9.366 1.708 11 3.781 11H7.5V5.5a.5.5 0 0 1 1 0V11h4.188C14.502 11 16 9.57 16 7.773c0-1.636-1.242-2.969-2.834-3.194C12.923 1.999 10.69 0 8 0zm-.354 15.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 14.293V11h-1v3.293l-2.146-2.147a.5.5 0 0 0-.708.708l3 3z" />
-                    </svg></a>
+                <p class="cv-links">
+                    Download CV:
+                    <a href="assets/pdf/chaker_khachlek_cv_eng.pdf" download>English</a> ·
+                    <a href="assets/pdf/chaker_khachlek_cv_fr.pdf" download>Français</a> ·
+                    <a href="cv.html">Interactive</a>
+                </p>
             </div>
         </div>
     </div>
@@ -161,7 +145,7 @@
     <div class="section-separator"></div>
 
     <!-- Technologies Section Start -->
-    <div class="section min-vh-100 d-flex align-items-center pt-5" id="technologies">
+    <div class="section d-flex align-items-center" id="technologies">
         <div class="polygons"></div>
         <div class="container">
             <div class="row d-flex align-items-center justify-content-center text-nowrap text-center text-light mb-5">
@@ -219,7 +203,7 @@
     <div class="section-separator"></div>
 
     <!-- Projects Section Start -->
-    <div class="section min-vh-100 d-flex align-items-center py-5" id="projects">
+    <div class="section d-flex align-items-center" id="projects">
         <div class="polygons"></div>
         <div class="container">
             <div class="row d-flex align-items-center justify-content-center text-nowrap text-center text-light my-5">
@@ -239,7 +223,7 @@
                 <div class="col"></div>
             </div>
             <blockquote class="blockquote-sm text-center text-light mb-5">
-                &ldquo; Some of the art I've created. &rdquo;
+                &ldquo; Things I've built and shipped. &rdquo;
             </blockquote>
             <div x-data="{ projects: [], showModal: false, currentProject: null }" x-init="() => {
                 fetch('https://chakerkhachlek.github.io/CKPortfolio/assets/json/projects.json')
@@ -248,21 +232,59 @@
             }">
 
                 <div class="container">
-                    <div class="row">
-                        <template x-for="project in projects" :key="project.title">
-                            <div class="col-lg-6 col-md-6 col-sm-6 my-3">
-                                <div data-bs-toggle="modal" data-bs-target="#exampleModal"
-                                    @click="currentProject = project; showModal = true;" class="card mb-6 position-relative"
-                                    style="cursor: pointer;"
-                                    style="background-color: #f8f9fa87; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-                                    &nbsp; > sudo
-                                    <img class=" image-responsive" height="500px" :src="project.img_link"
-                                        alt="Card image cap">
-                                    <h4 class="text-dark text-center mt-2"
-                                        style="font-family: 'Fira Code', monospace; font-size: 1.2rem; font-weight: bold; padding: 10px; background-color: white; border-radius: 50%;"
-                                        x-text="project.title"></h4>
-                                    <span class="project-year" x-show="project.date"
-                                        x-text="(project.date.match(/\d{4}/g) || []).pop()"></span>
+                    <!-- Featured projects -->
+                    <div class="row g-4 mb-4">
+                        <template x-for="project in projects.filter(p => p.featured)" :key="project.title">
+                            <div class="col-lg-6">
+                                <div class="project-card project-card-featured" role="button" tabindex="0"
+                                    @click="currentProject = project; showModal = true; bootstrap.Modal.getOrCreateInstance('#exampleModal').show();"
+                                    @keydown.enter="$el.click()">
+                                    <div class="project-media">
+                                        <img :src="project.img_link" :alt="project.title" loading="lazy">
+                                        <span class="project-badge">★ Featured</span>
+                                        <span class="project-year" x-show="project.date"
+                                            x-text="(project.date.match(/\d{4}/g) || []).pop()"></span>
+                                    </div>
+                                    <div class="project-body">
+                                        <h3 class="project-title" x-text="project.title"></h3>
+                                        <p class="project-tagline" x-text="project.tagline"></p>
+                                        <div class="project-tags">
+                                            <template x-for="tag in project.technologies.split(',').map(t => t.trim()).filter(Boolean).slice(0, 4)" :key="tag">
+                                                <span x-text="tag"></span>
+                                            </template>
+                                        </div>
+                                        <div class="project-links" x-show="project.links">
+                                            <template x-for="link in (project.links || [])" :key="link.url">
+                                                <a :href="link.url" target="_blank" rel="noopener" @click.stop
+                                                    x-text="link.label + ' ↗'"></a>
+                                            </template>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+
+                    <!-- Other projects -->
+                    <div class="row g-4">
+                        <template x-for="project in projects.filter(p => !p.featured)" :key="project.title">
+                            <div class="col-lg-4 col-md-6">
+                                <div class="project-card" role="button" tabindex="0"
+                                    @click="currentProject = project; showModal = true; bootstrap.Modal.getOrCreateInstance('#exampleModal').show();"
+                                    @keydown.enter="$el.click()">
+                                    <div class="project-media">
+                                        <img :src="project.img_link" :alt="project.title" loading="lazy">
+                                        <span class="project-year" x-show="project.date"
+                                            x-text="(project.date.match(/\d{4}/g) || []).pop()"></span>
+                                    </div>
+                                    <div class="project-body">
+                                        <h3 class="project-title" x-text="project.title"></h3>
+                                        <div class="project-tags">
+                                            <template x-for="tag in project.technologies.split(',').map(t => t.trim()).filter(Boolean).slice(0, 3)" :key="tag">
+                                                <span x-text="tag"></span>
+                                            </template>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </template>
@@ -314,7 +336,7 @@
                                     <template x-for="(screenshot, index) in currentProject.screenshots" :key="index">
                                         <div class="row text-center my-3">
                                             <div class="col-md-12">
-                                                <img :src="screenshot" class="img-fluid rounded" alt="Screenshot"
+                                                <img :src="screenshot" class="img-fluid rounded" :alt="currentProject.title + ' screenshot'" loading="lazy"
                                                     style="width: 70%;">
                                             </div>
                                         </div>
@@ -336,7 +358,7 @@
     <div class="section-separator"></div>
 
     <!-- Services Section Start -->
-    <div class="section min-vh-100 d-flex align-items-center my-5" id="services">
+    <div class="section d-flex align-items-center" id="services">
         <div class="polygons"></div>
         <div class="container">
             <div class="row d-flex align-items-center justify-content-center text-nowrap text-center text-light my-5">
@@ -412,7 +434,7 @@
     <div class="section-separator"></div>
 
     <!-- Contact Section Start -->
-    <div class="section min-vh-100 d-flex align-items-center" id="contact">
+    <div class="section d-flex align-items-center" id="contact">
         <div class="polygons"></div>
         <div class="container">
             <div class="row d-flex align-items-center justify-content-center text-nowrap text-center text-light mb-5">

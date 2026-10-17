@@ -2,6 +2,8 @@
   {
     "title": "Loasis (Oasis Plaza)",
     "date": "2026",
+    "featured": true,
+    "tagline": "A real-time multiplayer virtual café in your browser, with voice chat at the tables.",
     "img_link": "https://i.ibb.co/F47KWtpW/game1.png",
     "description": "Loasis is a 100% solo-developed 2D interactive virtual café playable directly in the browser on PC, tablet and mobile, with no downloads required. Players walk around the café, pick a table, customize their avatar and play classic games together: Chkobba (the traditional Tunisian card game), Dame (Checkers), Chess and Ludo. It features table-side voice chat, global text chat and a soundboard, a friends system with online presence, and AI bots to fill empty seats. Under the hood it runs on a custom engine built with AI as an engineering multiplier, including in-game map and decoration editors, and a self-hosted real-time stack: a LiveKit server for voice alongside a custom WebSocket server for game events, deployed on a dedicated VPC with full security handling.",
     "technologies": "Custom 2D Web Game Engine, WebSockets, LiveKit (self-hosted), WebRTC Voice Chat, Game AI Bots, Map & Decoration Editors, VPC Deployment",
@@ -38,6 +40,8 @@
   {
     "title": "OpenPromptRegistry",
     "date": "May 2025",
+    "featured": true,
+    "tagline": "Organise, version and share AI prompts in one place.",
     "img_link": "https://i.ibb.co/Tx3nKwW7/image.png",
     "description": "www.opregistry.com is a comprehensive platform for managing and sharing AI prompts. Features include prompt organization, versioning, and a collaborative environment for prompt engineers.",
     "technologies": "Next.js, TypeScript, Bootstrap, Prisma, NextAuth.js",
