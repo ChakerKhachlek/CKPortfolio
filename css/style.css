@@ -313,3 +313,20 @@ input:checked + .slider:before {
 .btn-cheatsheet:focus::before {
   transform: translateY(-50%) translateX(150%) rotate(25deg);
 }
+
+/* ---- project card release year ---- */
+.project-year {
+  position: absolute;
+  top: 34px;
+  right: 12px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: #121212;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  font-family: 'Fira Code', monospace;
+  font-size: 0.95rem;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+}
