@@ -38,48 +38,35 @@
 <body>
 
     <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top"
-        style="background-color: black; padding-left: 20px; padding-right: 20px;">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top site-nav" id="siteNav">
         <div class="container-fluid">
-            <a class="navbar-brand nav-item mr-3" href="#">
-                <img src="assets/img/logo.jpeg" alt="" width="30" height="24" class="d-inline-block align-text-top">
-                Portfolio
+            <a class="navbar-brand site-brand" href="#">
+                <img src="assets/img/logo.jpeg" alt="" width="32" height="32">
+                <span>Chaker Khachlek<b>.</b></span>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            <button class="navbar-toggler site-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <span></span><span></span><span></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item">
-                        <a class="nav-link text-light" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-light" href="#technologies">Technologies</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-light" href="#projects">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-light" href="#services">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-light" href="#contact">Contact</a>
-                    </li>
-
+                <ul class="navbar-nav mx-auto site-links">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#technologies">Technologies</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
-                <div class="toggle-container">
-                    <label class="switch">
+                <div class="site-nav-actions">
+                    <label class="ripple-toggle" title="Water ripple effect">
                         <input type="checkbox" id="rippleToggle">
-                        <span class="slider"></span>
+                        <span class="ripple-toggle-track"><span></span></span>
+                        <span class="ripple-toggle-label">Ripple</span>
                     </label>
-                    <span class="toggle-label">Water Ripple</span>
+                    <a class="site-nav-cta" href="cv.html">View CV</a>
                 </div>
             </div>
-
         </div>
-
     </nav>
     <!-- Navbar End -->
 
@@ -569,6 +556,36 @@
         console.log("Hi Hacker! Take whatever you want there is nothing to hide https://github.com/ChakerKhachlek/CKPortfolio")
         document.getElementById("currentYear").textContent =
             new Date().getFullYear();
+    </script>
+
+    <!-- Navbar: solid on scroll, highlight the section in view, close the mobile menu on click -->
+    <script>
+        (function () {
+            var nav = document.getElementById('siteNav');
+            var links = Array.prototype.slice.call(nav.querySelectorAll('.site-links .nav-link'));
+            var sections = links.map(function (l) { return document.querySelector(l.getAttribute('href')); });
+
+            function update() {
+                nav.classList.toggle('scrolled', window.scrollY > 20);
+                var mark = window.scrollY + window.innerHeight * 0.35, current = null;
+                sections.forEach(function (sec, i) { if (sec && sec.offsetTop <= mark) current = links[i]; });
+                links.forEach(function (l) {
+                    var on = l === current;
+                    l.classList.toggle('active', on);
+                    if (on) l.setAttribute('aria-current', 'true'); else l.removeAttribute('aria-current');
+                });
+            }
+            window.addEventListener('scroll', update, { passive: true });
+            window.addEventListener('resize', update);
+            update();
+
+            var menu = document.getElementById('navbarSupportedContent');
+            links.forEach(function (l) {
+                l.addEventListener('click', function () {
+                    if (menu.classList.contains('show') && window.bootstrap) bootstrap.Collapse.getOrCreateInstance(menu).hide();
+                });
+            });
+        })();
     </script>
 
     <!-- Script to display ripples -->
