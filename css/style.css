@@ -403,12 +403,6 @@ input:checked + .slider:before {
   border-color: #4ade80;
 }
 
-.hero-small {
-  margin-top: 1.25rem;
-  font-size: 0.85rem;
-}
-
-.hero-small a,
 .cv-links a {
   color: #d1d5db;
 }
