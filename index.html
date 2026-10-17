@@ -257,6 +257,8 @@
                                     <h4 class="text-dark text-center mt-2"
                                         style="font-family: 'Fira Code', monospace; font-size: 1.2rem; font-weight: bold; padding: 10px; background-color: white; border-radius: 50%;"
                                         x-text="project.title"></h4>
+                                    <p class="text-dark text-center mb-2" style="font-family: 'Fira Code', monospace; font-size: 0.9rem;"
+                                        x-show="project.date" x-text="project.date"></p>
                                 </div>
                             </div>
                         </template>
@@ -277,6 +279,8 @@
                                 <div class="container">
                                     <div class="row text-light">
                                         <div class="col-md-12">
+                                            <p x-show="currentProject && currentProject.date"><strong>Date:</strong> <span
+                                                    x-text="currentProject ? currentProject.date : ''"></span></p>
                                             <p class="" x-text="currentProject ? currentProject.description : ''"></p>
                                             <p><strong>Technologies:</strong> <span
                                                     class="badge ml-3 bg-light text-dark "
