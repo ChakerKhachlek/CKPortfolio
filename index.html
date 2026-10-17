@@ -283,6 +283,15 @@
                                                     x-text="currentProject ? currentProject.technologies : ''"
                                                     style="text-wrap: wrap;"></span>
                                             </p>
+                                            <template x-if="currentProject && currentProject.links">
+                                                <p>
+                                                    <template x-for="link in currentProject.links" :key="link.url">
+                                                        <a :href="link.url" target="_blank" rel="noopener"
+                                                            class="btn btn-sm btn-outline-light me-2 mb-2"
+                                                            x-text="link.label"></a>
+                                                    </template>
+                                                </p>
+                                            </template>
                                             <p></p>
                                         </div>
                                     </div>
