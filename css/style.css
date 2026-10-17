@@ -850,3 +850,256 @@ html {
     border-top: 1px solid #2a2a2a;
   }
 }
+
+/* ---- services ---- */
+.service-steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  counter-reset: step;
+}
+
+.service-step {
+  position: relative;
+  padding: 22px 20px 24px;
+  background: #1b1b1b;
+  border: 1px solid #2a2a2a;
+  border-radius: 16px;
+  color: #fff;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.service-step:hover {
+  transform: translateY(-4px);
+  border-color: #555;
+}
+
+/* Arrow linking each step to the next on wide screens */
+.service-step:not(:last-child)::after {
+  content: "→";
+  position: absolute;
+  top: 44px;
+  right: -14px;
+  z-index: 1;
+  width: 24px;
+  height: 24px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #121212;
+  border: 1px solid #333;
+  color: #4ade80;
+  font-size: 0.8rem;
+}
+
+.service-step-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 18px;
+}
+
+.service-step-icon {
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: #262626;
+  border: 1px solid #333;
+}
+
+.service-step-icon img {
+  width: 34px;
+  height: 34px;
+}
+
+.service-step-num {
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1px #4a4a4a;
+}
+
+.service-step:hover .service-step-num {
+  -webkit-text-stroke-color: #4ade80;
+}
+
+.service-step h3 {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.service-step p {
+  margin: 0;
+  color: #b8bcc4;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 991.98px) {
+  .service-steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .service-step:not(:last-child)::after {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .service-steps {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---- contact ---- */
+.contact-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  gap: 40px;
+  align-items: center;
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 40px;
+  border: 1px solid #2a2a2a;
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(74, 222, 128, 0.12), transparent 45%),
+    #161616;
+  color: #fff;
+}
+
+.contact-kicker {
+  color: #4ade80;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+
+.contact-intro h3 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: bold;
+  line-height: 1.25;
+  margin-bottom: 14px;
+}
+
+.contact-intro p:not(.contact-kicker) {
+  color: #b8bcc4;
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.contact-intro .hero-btn {
+  display: inline-block;
+}
+
+.contact-cards {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 12px;
+}
+
+.contact-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  background: #1f1f1f;
+  border: 1px solid #2f2f2f;
+  border-radius: 14px;
+  color: #fff;
+  text-decoration: none;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+a.contact-card:hover,
+.contact-card:hover {
+  border-color: #555;
+  color: #fff;
+}
+
+a.contact-card:hover {
+  transform: translateX(4px);
+}
+
+.contact-card-icon {
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: #fff;
+  color: #000;
+}
+
+.contact-card-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.contact-card-body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-card-body > :last-child {
+  overflow-wrap: anywhere;
+}
+
+.contact-card-body a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.contact-card-body a:hover {
+  text-decoration: underline;
+}
+
+.contact-card-label {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.contact-card-arrow {
+  color: #9ca3af;
+}
+
+a.contact-card:hover .contact-card-arrow {
+  color: #4ade80;
+}
+
+.contact-copy {
+  flex-shrink: 0;
+  padding: 5px 12px;
+  border-radius: 999px;
+  border: 1px solid #444;
+  background: transparent;
+  color: #d1d5db;
+  font: inherit;
+  font-size: 0.8rem;
+}
+
+.contact-copy:hover {
+  border-color: #fff;
+  color: #fff;
+}
+
+.contact-copy.copied {
+  border-color: #4ade80;
+  color: #4ade80;
+}
+
+@media (max-width: 860px) {
+  .contact-panel {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 24px 18px;
+    gap: 28px;
+  }
+}
