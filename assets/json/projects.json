@@ -1,7 +1,7 @@
 [
   {
     "title": "Loasis (Oasis Plaza)",
-    "img_link": "assets/img/projects/oasis-plaza/cover.png",
+    "img_link": "https://i.ibb.co/F47KWtpW/game1.png",
     "description": "Loasis is a 100% solo-developed 2D interactive virtual café playable directly in the browser on PC, tablet and mobile, with no downloads required. Players walk around the café, pick a table, customize their avatar and play classic games together: Chkobba (the traditional Tunisian card game), Dame (Checkers), Chess and Ludo. It features table-side voice chat, global text chat and a soundboard, a friends system with online presence, and AI bots to fill empty seats. Under the hood it runs on a custom engine built with AI as an engineering multiplier, including in-game map and decoration editors, and a self-hosted real-time stack: a LiveKit server for voice alongside a custom WebSocket server for game events, deployed on a dedicated VPC with full security handling.",
     "technologies": "Custom 2D Web Game Engine, WebSockets, LiveKit (self-hosted), WebRTC Voice Chat, Game AI Bots, Map & Decoration Editors, VPC Deployment",
     "links": [
@@ -15,7 +15,23 @@
       }
     ],
     "screenshots": [
-      "assets/img/projects/oasis-plaza/cover.png"
+      "https://i.ibb.co/yBpZLLMC/servers.png",
+      "https://i.ibb.co/LzXwzYs6/admin-map.png",
+      "https://i.ibb.co/GwryVs1/admin-npc-spawn.png",
+      "https://i.ibb.co/kgLD6cNF/chess.png",
+      "https://i.ibb.co/T3cSmGp/chess2.png",
+      "https://i.ibb.co/R4jrVnM0/chkobba.png",
+      "https://i.ibb.co/Xrzsqqqt/chkobba2.png",
+      "https://i.ibb.co/7xm2hvpt/daily-quests.png",
+      "https://i.ibb.co/4RWLrB0g/dame.png",
+      "https://i.ibb.co/vC4Rm6sD/dame2.png",
+      "https://i.ibb.co/FqnWY6jT/friends.png",
+      "https://i.ibb.co/F47KWtpW/game1.png",
+      "https://i.ibb.co/F49W0r9x/ludo.png",
+      "https://i.ibb.co/LXS7k7KC/ludo2.png",
+      "https://i.ibb.co/ymS1p8hk/out1.png",
+      "https://i.ibb.co/nMXcryHc/out2.png",
+      "https://i.ibb.co/RGPXtCXX/roulette.png"
     ]
   },
   {
