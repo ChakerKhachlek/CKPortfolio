@@ -224,7 +224,17 @@
             <blockquote class="blockquote-sm text-center text-light mb-5">
                 &ldquo; Things I've built and shipped. &rdquo;
             </blockquote>
-            <div x-data="{ projects: [], showModal: false, currentProject: null }" x-init="() => {
+            <div x-data="{ projects: [], showModal: false, currentProject: null,
+                // Sort key from the end of the date: year, then month when given ('Jul. 2023' > '2023').
+                dateKey(p) {
+                    const d = p.date || '';
+                    const years = d.match(/\d{4}/g) || ['0'];
+                    const month = d.match(/([A-Za-z]{3})[a-z]*\.?\s+\d{4}\s*$/);
+                    const index = month ? 'janfebmaraprmayjunjulaugsepoctnovdec'.indexOf(month[1].toLowerCase()) / 3 + 1 : 0;
+                    return Number(years[years.length - 1]) * 13 + index;
+                },
+                byDate(list) { return [...list].sort((a, b) => this.dateKey(b) - this.dateKey(a)); }
+            }" x-init="() => {
                 fetch('https://chakerkhachlek.github.io/CKPortfolio/assets/json/projects.json')
                     .then(response => response.json())
                     .then(data => projects = data);
@@ -233,7 +243,7 @@
                 <div class="container">
                     <!-- Featured projects -->
                     <div class="row g-4 mb-4">
-                        <template x-for="project in projects.filter(p => p.featured)" :key="project.title">
+                        <template x-for="project in byDate(projects.filter(p => p.featured))" :key="project.title">
                             <div class="col-lg-6">
                                 <div class="project-card project-card-featured" role="button" tabindex="0"
                                     @click="currentProject = project; showModal = true; bootstrap.Modal.getOrCreateInstance('#exampleModal').show();"
@@ -266,7 +276,7 @@
 
                     <!-- Other projects -->
                     <div class="row g-4">
-                        <template x-for="project in projects.filter(p => !p.featured)" :key="project.title">
+                        <template x-for="project in byDate(projects.filter(p => !p.featured))" :key="project.title">
                             <div class="col-lg-4 col-md-6">
                                 <div class="project-card" role="button" tabindex="0"
                                     @click="currentProject = project; showModal = true; bootstrap.Modal.getOrCreateInstance('#exampleModal').show();"
