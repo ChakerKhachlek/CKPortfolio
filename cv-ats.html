@@ -76,7 +76,9 @@
         <a href="cv.html"><span class="en">← designed CV</span><span class="fr">← CV design</span></a>
         <button type="button" data-set-lang="en">EN</button>
         <button type="button" data-set-lang="fr">FR</button>
-        <button type="button" onclick="window.print()"><span class="en">Save as PDF</span><span class="fr">Enregistrer en PDF</span></button>
+        <!-- Pre-rendered PDFs: window.print() is ignored by many mobile and in-app browsers -->
+        <a class="en" href="assets/pdf/chaker_khachlek_cv_ats_en.pdf" download>Download PDF</a>
+        <a class="fr" href="assets/pdf/chaker_khachlek_cv_ats_fr.pdf" download>Télécharger le PDF</a>
     </nav>
 
     <main class="sheet">
